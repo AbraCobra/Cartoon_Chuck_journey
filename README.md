@@ -14,7 +14,7 @@ Animation includes more then twenty objects which have opportunity to be animate
 - Chuck_draw()
 - Title_draw()
 
-![EntryScene](https://github.com/AbraCobra/feed-bag/blob/main/PICTURES/EntryScene.png)
+![EntryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/EntryScene.png)
 
 ***2. SpringCountryScene() includes next functions:***
 - Cloud_draw ()
@@ -27,11 +27,20 @@ Animation includes more then twenty objects which have opportunity to be animate
 - CatBody_draw()
 - Girl_draw
 
-![SpringCountryScene](https://github.com/AbraCobra/feed-bag/blob/main/PICTURES/SpringCountryScene.png)
+![SpringCountryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/SpringCountryScene.png)
 
 ***3. PinkMountainScene() includes next functions:
 - Water_lily_draw()
 - Reed_draw()
 - Chuck_draw()
 
-![PinkMountainScene](https://github.com/AbraCobra/feed-bag/blob/main/PICTURES/SpringCountryScene.png)
+![PinkMountainScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/PinkMountainScene.png)
+
+***4. NightSavanahScene() includes next functions:
+- Water_lily_draw()
+- Reed_draw()
+- Chuck_draw()
+
+![NightSavanahScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/NightSavanahScene.png)
+
+![NightSavanahSceneEndFalling](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/NightSavanahSceneEndFalling.png)
