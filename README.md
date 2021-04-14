@@ -4,12 +4,13 @@ Author Abramova Irina
 ***This cartoon was made of absolutely unsuitable objects which were done while procedure studying.
 So I think, it to be more arthouse rather than classic.***
 
-##>Annotation<
-**The main character this little story - yellow bird, called Chuck.
+>##**Annotation**<
+
+*The main character this little story - yellow bird, called Chuck.
 He rides a skateboard watching all around at ease.
 Than he travels down the river, been surrounded by very picturesque pink mountains.
 At the end, following traditional behavior of Angry Birds, he flies.
-But does small  harm  as usual.**
+But does small  harm  as usual.*
 
 Animation includes more then twenty objects which have opportunity to be animated.
 
