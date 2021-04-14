@@ -29,18 +29,28 @@ Animation includes more then twenty objects which have opportunity to be animate
 
 ![SpringCountryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/SpringCountryScene.png)
 
-***3. PinkMountainScene() includes next functions:
+***3. PinkMountainScene() includes next functions:***
 - Water_lily_draw()
 - Reed_draw()
 - Chuck_draw()
 
 ![PinkMountainScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/PinkMountainScene.png)
 
-***4. NightSavanahScene() includes next functions:
-- Water_lily_draw()
-- Reed_draw()
+***4. Three next scene include the same functions:***
+- SavanahLandscape()
+- Flower_draw()
 - Chuck_draw()
 
 ![NightSavanahScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/NightSavanahScene.png)
 
+
 ![NightSavanahSceneEndFalling](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/NightSavanahSceneEndFalling.png)
+
+***5. Final scene FinishScene()
+includes functions:***
+- SavanahLandscape()
+- Flower_draw()
+- Chuck_draw()
+- BigDipper_draw()
+- FinishTitles()
+- WorkisDone ()
