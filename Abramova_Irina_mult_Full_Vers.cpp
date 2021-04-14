@@ -217,11 +217,11 @@ void NightSavanahScene()
         txClear();
         SavanahLandscape();
 
-        Flower_draw    ( 850, 565, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 835, 465, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 885, 410, 0.5, 0.5, RGB(255, 100, 255));
-        Flower_draw    ( 930, 510, 0.3, 0.3, RGB(255, 178, 255));
-        Flower_draw    ( 780, 620, 0.3, 0.3, RGB(255, 178, 100));
+        Flower_draw    ( 850, 565, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 835, 465, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 885, 410, 0.5, 0.5, RGB (255, 100, 255));
+        Flower_draw    ( 930, 510, 0.3, 0.3, RGB (255, 178, 255));
+        Flower_draw    ( 780, 620, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     (t*50, 10 + 20*t, 0.5, 0.5, 10, (t%2*30) + 50);
 
         txSleep(200);
@@ -242,11 +242,11 @@ void NightSavanahSceneEnd()
         txClear();
         SavanahLandscape();
 
-        Flower_draw    ( 850, 565, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 835, 465, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 885, 410, 0.5, 0.5, RGB(255, 100, 255));
-        Flower_draw    ( 930, 510, 0.3, 0.3, RGB(255, 178, 255));
-        Flower_draw    ( 780, 620, 0.3, 0.3, RGB(255, 178, 100));
+        Flower_draw    ( 850, 565, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 835, 465, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 885, 410, 0.5, 0.5, RGB (255, 100, 255));
+        Flower_draw    ( 930, 510, 0.3, 0.3, RGB (255, 178, 255));
+        Flower_draw    ( 780, 620, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     ( 800, 520, 0.5, 0.5, - 30, (t%2*30) + 50);
 
         txSleep(100);
@@ -268,11 +268,11 @@ void NightSavanahSceneEndFalling()
         txClear();
         SavanahLandscape();
 
-        Flower_draw    ( 850, 565 + 50*t, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 835, 465 + 50*t, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 885, 410 + 50*t, 0.5, 0.5, RGB(255, 100, 255));
-        Flower_draw    ( 930, 510 + 50*t, 0.3, 0.3, RGB(255, 178, 255));
-        Flower_draw    ( 780, 620 + 50*t, 0.3, 0.3, RGB(255, 178, 100));
+        Flower_draw    ( 850, 565 + 50*t, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 835, 465 + 50*t, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 885, 410 + 50*t, 0.5, 0.5, RGB (255, 100, 255));
+        Flower_draw    ( 930, 510 + 50*t, 0.3, 0.3, RGB (255, 178, 255));
+        Flower_draw    ( 780, 620 + 50*t, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     ( 820, 520, 0.5, 0.5, - 30, -20 );
 
         txSleep(100);
@@ -294,11 +294,11 @@ void NightSavanahSceneEndFallingResume()
         txClear();
         SavanahLandscape();
 
-        Flower_draw    ( 850, 790, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 835, 780, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 885, 800, 0.5, 0.5, RGB(255, 100, 255));
-        Flower_draw    ( 930, 800, 0.3, 0.3, RGB(255, 178, 255));
-        Flower_draw    ( 780, 800, 0.3, 0.3, RGB(255, 178, 100));
+        Flower_draw    ( 850, 790, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 835, 780, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 885, 800, 0.5, 0.5, RGB (255, 100, 255));
+        Flower_draw    ( 930, 800, 0.3, 0.3, RGB (255, 178, 255));
+        Flower_draw    ( 780, 800, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     ( 820, 520, 0.5, 0.5, - 30, -20 );
 
         txSleep(100);
@@ -326,11 +326,11 @@ void FinishScene()
         BigDipper_draw (1010, 150, 4*t/50);
         BigDipper_draw (1010, 250, 5*t/50);
         BigDipper_draw (1010,  50, 6*t/50);
-        Flower_draw    ( 850, 790, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 835, 780, 0.5, 0.5, RGB(255, 203, 255));
-        Flower_draw    ( 885, 800, 0.5, 0.5, RGB(255, 100, 255));
-        Flower_draw    ( 930, 800, 0.3, 0.3, RGB(255, 178, 255));
-        Flower_draw    ( 780, 800, 0.3, 0.3, RGB(255, 178, 100));
+        Flower_draw    ( 850, 790, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 835, 780, 0.5, 0.5, RGB (255, 203, 255));
+        Flower_draw    ( 885, 800, 0.5, 0.5, RGB (255, 100, 255));
+        Flower_draw    ( 930, 800, 0.3, 0.3, RGB (255, 178, 255));
+        Flower_draw    ( 780, 800, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     ( 820, 520, 0.5, 0.5, - 30, -20 );
         FinishTitles   ( 250,  900 - 4*t);
         WorkisDone     ( 300, 1500 - 4*t);
@@ -346,7 +346,7 @@ void WindMill_draw (int x, int y, double sizeX, double sizeY)
     {
     txSetColor     (RGB (183, 104, 87));
     txSetFillColor (RGB (183, 104, 87));
-    POINT mill[7] = {{x, y - ROUND ( 40*sizeY)}, {x + ROUND (40*sizeX), y - ROUND ( 10*sizeY)},
+    POINT mill[7] = {{                   x, y - ROUND ( 40*sizeY)}, {x + ROUND (40*sizeX), y - ROUND ( 10*sizeY)},
                      {x + ROUND (60*sizeX), y + ROUND (120*sizeY)}, {x + ROUND (60*sizeX), y + ROUND (170*sizeY)},
                      {x - ROUND (60*sizeX), y + ROUND (170*sizeY)}, {x - ROUND (60*sizeX), y + ROUND (120*sizeY)},
                      {x - ROUND (40*sizeX), y - ROUND ( 10*sizeY)}};
@@ -616,9 +616,9 @@ void Chuck_draw  (int x, int y, double sizeX, double sizeY, int eyebrows, int he
     txLine    (x + 45*sizeX, y + 100*sizeY, x + 130*sizeX, y + (50 - eyebrows)*sizeY);
 
     txSetColor(TX_BLACK, 3);
-    txLine (x + 15*sizeX, y + 10*sizeY, x -  (75 + hear/2)*sizeX, y - (30 - hear)*sizeY);
-    txLine (x + 15*sizeX, y + 10*sizeY, x -  (85 + hear/2)*sizeX, y - (10 - hear)*sizeY);
-    txLine (x + 15*sizeX, y + 10*sizeY, x - (115 + hear/2)*sizeX, y + (20 - hear)*sizeY);
+    txLine (x + 15*sizeX, y +  10*sizeY, x -  (75 + hear/2)*sizeX, y - (30 - hear)*sizeY);
+    txLine (x + 15*sizeX, y +  10*sizeY, x -  (85 + hear/2)*sizeX, y - (10 - hear)*sizeY);
+    txLine (x + 15*sizeX, y +  10*sizeY, x - (115 + hear/2)*sizeX, y + (20 - hear)*sizeY);
 
     txLine (x - 85*sizeX, y + 130*sizeY, x - 115*sizeX, y +  90*sizeY);
     txLine (x - 85*sizeX, y + 130*sizeY, x - 125*sizeX, y + 110*sizeY);
