@@ -8,6 +8,7 @@ So I think, it to be more arthouse rather than classic.***
 Animation includes more then twenty objects which have opportunity to be animated.
 
 ***1. EntryScene() includes next functions:***
+- SpringFonBegining()
 - Grass_draw()
 - Skateboard_draw()
 - Skate_wheels_draw()
@@ -17,6 +18,7 @@ Animation includes more then twenty objects which have opportunity to be animate
 ![EntryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/EntryScene.png)
 
 ***2. SpringCountryScene() includes next functions:***
+- SpringFon()
 - Cloud_draw ()
 - Tree_draw()
 - WindMill_draw()
@@ -30,6 +32,7 @@ Animation includes more then twenty objects which have opportunity to be animate
 ![SpringCountryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/SpringCountryScene.png)
 
 ***3. PinkMountainScene() includes next functions:***
+- MountainsLandscape()
 - Water_lily_draw()
 - Reed_draw()
 - Chuck_draw()
@@ -54,3 +57,5 @@ includes functions:***
 - BigDipper_draw()
 - FinishTitles()
 - WorkisDone ()
+
+![FinishScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/FinalScene.png)
