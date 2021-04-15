@@ -1,9 +1,11 @@
- //===========================================================================
- //          Абрамова Ирина, Краснодар, гимназия 36, 2021
- //===========================================================================
+//===========================================================================
+//         Abramova Irina, gymnasium 36, Krasnodar 2021
+//===========================================================================
 
 #include "TXLib.h"
 #include <cmath>
+
+//function prototypes
 
 void EntryScene ();
 void SpringCountryScene();
@@ -18,7 +20,7 @@ void SpringFon();
 void MountainsLandscape();
 void SavanahLandscape();
 void Cloud_draw          (int  x, int  y, double sizeX, double sizeY, COLORREF cloudColor);
-void Tree_draw           (int  x, int  y, int n, double sizeX, double sizeY);
+void Tree_draw           (int  x, int  y, int crown_width, double sizeX, double sizeY);
 void WindMill_draw       (int  x, int  y, double sizeX, double sizeY);
 void Millblades_draw     (int x0, int y0, int x, int y);
 void Butterfly_draw      (int  x, int  y, COLORREF color, int bigness);
@@ -44,6 +46,9 @@ void Girl_draw           (int  x, int  y, double sizeX, double sizeY, int hands_
                           int eyesCRAZYright, int eyesPUPILright,
                           int mouthTOPpoint,  int mouthLOWERpoint,
                           COLORREF HairColor, COLORREF BodyColor = (RGB (224, 199, 160)));
+
+//function calls
+
 int main()
     {
     txCreateWindow (1100, 900);
@@ -60,10 +65,12 @@ int main()
     return 0;
     }
 
+//functions
+
 void EntryScene()
     {
     txBegin();
-    txPlaySound("av013.wav", SND_LOOP);
+    txPlaySound ("av013.wav", SND_LOOP);
 
     int t = 0;
     while (t <= 90)
@@ -100,7 +107,7 @@ void SpringCountryScene()
     {
     txBegin();
     txPlaySound (NULL);
-    txPlaySound("av014.wav", SND_LOOP);
+    txPlaySound ("av014.wav", SND_LOOP);
 
     int t = 0;
     while (t <= 120)
@@ -179,7 +186,7 @@ void PinkMountainScene()
     {
     txBegin();
     txPlaySound (NULL);
-    txPlaySound("BY_RIVER.wav", SND_LOOP);
+    txPlaySound ("BY_RIVER.wav", SND_LOOP);
 
     int t = 0;
     int inclination = 30;
@@ -212,7 +219,7 @@ void PinkMountainScene()
 void NightSavanahScene()
     {
     txPlaySound (NULL);
-    txPlaySound("MARTINET.wav", SND_LOOP);
+    txPlaySound ("MARTINET.wav", SND_LOOP);
     txBegin();
 
     int t = 0;
@@ -228,7 +235,7 @@ void NightSavanahScene()
         Flower_draw    ( 780, 620, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     (t*50, 10 + 20*t, 0.5, 0.5, 10, (t%2*30) + 50);
 
-        txSleep(200);
+        txSleep (200);
         t++;
         }
 
@@ -253,7 +260,7 @@ void NightSavanahSceneEnd()
         Flower_draw    ( 780, 620, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     ( 800, 520, 0.5, 0.5, - 30, (t%2*30) + 50);
 
-        txSleep(100);
+        txSleep (100);
         t++;
         }
 
@@ -263,7 +270,7 @@ void NightSavanahSceneEnd()
 void NightSavanahSceneEndFalling()
      {
     txPlaySound (NULL);
-    txPlaySound("BIRDHIT.wav", SND_LOOP);
+    txPlaySound ("BIRDHIT.wav", SND_LOOP);
     txBegin();
 
     int t = 0;
@@ -279,7 +286,7 @@ void NightSavanahSceneEndFalling()
         Flower_draw    ( 780, 620 + 50*t, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     ( 820, 520, 0.5, 0.5, - 30, -20 );
 
-        txSleep(100);
+        txSleep (100);
         t++;
         }
 
@@ -289,7 +296,7 @@ void NightSavanahSceneEndFalling()
 void NightSavanahSceneEndFallingResume()
     {
     txPlaySound (NULL);
-    txPlaySound("AFRICAN.wav", SND_LOOP);
+    txPlaySound ("AFRICAN.wav", SND_LOOP);
     txBegin();
 
     int t = 0;
@@ -305,7 +312,7 @@ void NightSavanahSceneEndFallingResume()
         Flower_draw    ( 780, 800, 0.3, 0.3, RGB (255, 178, 100));
         Chuck_draw     ( 820, 520, 0.5, 0.5, - 30, -20 );
 
-        txSleep(100);
+        txSleep (100);
         t++;
         }
 
@@ -315,7 +322,7 @@ void NightSavanahSceneEndFallingResume()
 void FinishScene()
     {
     txPlaySound (NULL);
-    txPlaySound("FB002.wav", SND_LOOP);
+    txPlaySound ("FB002.wav", SND_LOOP);
     txBegin();
 
     int t = 0;
@@ -339,7 +346,7 @@ void FinishScene()
         FinishTitles   ( 250,  900 - 4*t);
         WorkisDone     ( 300, 1500 - 4*t);
 
-        txSleep(20);
+        txSleep (20);
         t++;
         }
 
@@ -363,7 +370,7 @@ void Millblades_draw (int x0, int y0, int x, int y)
     txLine     (x0, y0, x, y);
     }
 
-void Tree_draw (int x, int y, int n, double sizeX, double sizeY)
+void Tree_draw (int x, int y, int crown_width, double sizeX, double sizeY)
     {
     txSetFillColor (RGB (128, 64, 0));
     POINT trunk[3] = {{x, y}, {x - ROUND (20*sizeX), y + ROUND (200*sizeY)},
@@ -372,20 +379,20 @@ void Tree_draw (int x, int y, int n, double sizeX, double sizeY)
 
     txSetFillColor (RGB (40, 203, 88));
 
-    for (int j = n; j > 0; j--)
+    for (int row = crown_width; row > 0; row--)
         {
-        for (int i = 0; i < j; i++)
+        for (int leaves = 0; leaves < row; leaves++)
             {
             txSetFillColor (RGB (rand()%10, rand()%255, rand()%10));
-            txCircle (x + 15*i*sizeX, y + 15*j*sizeY, 16*sizeX);
+            txCircle (x + 15*leaves*sizeX, y + 15*row*sizeY, 16*sizeX);
             }
         }
-    for (int j = n; j > 0; j--)
+    for (int row = crown_width; row > 0; row--)
         {
-        for (int i = 0; i < j; i++)
+        for (int leaves = 0; leaves < row; leaves++)
             {
             txSetFillColor (RGB (rand()%10, rand()%255, rand()%10));
-            txCircle (x - 15*i*sizeX, y + 15*j*sizeY, 16*sizeX);
+            txCircle (x - 15*leaves*sizeX, y + 15*row*sizeY, 16*sizeX);
             }
         }
     }
@@ -400,11 +407,11 @@ void Butterfly_draw (int x, int y, COLORREF color, int bigness)
     txSetColor (color);
     txSetFillColor (color);
 
-    for (int i = 20/bigness; i >= 4/bigness; i-= 4/bigness)
+    for (int part = 20/bigness; part >= 4/bigness; part -= 4/bigness)
         {
-        txCircle (x, y, i);
-        x -= i;
-        y += i;
+        txCircle (x, y, part);
+        x -= part;
+        y += part;
         }
 
     txSetColor     (RGB (128, 255, 255));
@@ -507,7 +514,7 @@ void MountainsLandscape()
 
     txSetColor      (RGB (50, 255, 50), 3);
     txSetFillColor  (RGB (50, 255, 50));
-    POINT riverbank[4] = {{0, 900}, {0, 800}, {1150, 800},{1150, 900}};
+    POINT riverbank[4] = {{0, 900}, {0, 800}, {1150, 800}, {1150, 900}};
     txPolygon (riverbank, 4);
     }
 
@@ -635,8 +642,8 @@ void Chuck_draw  (int x, int y, double sizeX, double sizeY, int eyebrows, int he
                        {x + ROUND (140*sizeX), y + ROUND (155*sizeY)}, {x + ROUND (35*sizeX), y + ROUND (115*sizeY)}};
     txPolygon (beakUp, 4);
 
-    POINT beakDown[3] = {{                  x, y + ROUND (145*sizeY)}, {x + ROUND (45*sizeX), y + ROUND (135*sizeY)},
-                         {x + ROUND(97*sizeX), y + ROUND (150*sizeY)}};
+    POINT beakDown[3] = {{                   x, y + ROUND (145*sizeY)}, {x + ROUND (45*sizeX), y + ROUND (135*sizeY)},
+                         {x + ROUND (97*sizeX), y + ROUND (150*sizeY)}};
     txPolygon (beakDown, 3);
     }
 
@@ -749,8 +756,8 @@ void Girl_draw (int x, int y, double sizeX, double sizeY, int hands_UP,
     txCircle   (x + 50*sizeX, y + 30*sizeY, 25*sizeX);
 
     POINT girlsGown[4] = {{x - ROUND (30*sizeX), y}, {x + ROUND(30*sizeX), y},
-                          {x + ROUND (70*sizeX), y + ROUND(120*sizeY)},
-                          {x - ROUND (80*sizeX), y + ROUND(120*sizeY)}};
+                          {x + ROUND (70*sizeX), y + ROUND (120*sizeY)},
+                          {x - ROUND (80*sizeX), y + ROUND (120*sizeY)}};
     txPolygon (girlsGown, 4);
 
     txSetFillColor (TX_WHITE);
@@ -868,8 +875,8 @@ void CatBody_draw (int x, int y, double width, double height, double eyebrows, C
     txRectangle (x + 50*width, y + 120*height, x + 110*width, y + 100*height);
 
     POINT cat_body[4] = {{x, y}, {x + ROUND (40*width), y},
-                        {x + ROUND (60*width), y + ROUND (120*height)},
-                        {x - ROUND (30*width), y + ROUND (120*height)}};
+                         {x + ROUND (60*width), y + ROUND (120*height)},
+                         {x - ROUND (30*width), y + ROUND (120*height)}};
     txPolygon (cat_body, 4);
 
     POINT cats_earL[3] = {{x, y}, {x - ROUND (45*width), y - ROUND (75*height)},
