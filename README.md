@@ -12,7 +12,9 @@ Than he travels down the river, been surrounded by very picturesque pink mountai
 At the end, following traditional behavior of Angry Birds, he flies.
 But does small  harm  as usual.*
 
->Animation includes more then twenty objects which have opportunity to be animated.
+>Animation  was done by using  special graphic library "TXLib.h".
+>The author of library Dedinskiy Ilya. [TXLib.h](http://ded32.net.ru/)
+ This short animation includes more then twenty objects which have opportunity to be animated.
 
 ***1. EntryScene() includes next functions:***
 - SpringFonBegining()
