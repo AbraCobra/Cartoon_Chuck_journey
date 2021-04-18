@@ -828,10 +828,10 @@ void WorkisDone  (int x, int y)
     {
     txSetColor   (RGB (255, 215, 0));
     txSelectFont ("Comic Sans MS", 60);
-    txTextOut    ( x, y, "Работу выполнила");
-    txTextOut    ( x, y + 100, "учитель информатики");
-    txTextOut    ( x, y + 200, "Абрамова И.В.");
-    txTextOut    ( x, y + 300, "гимназия 36, Краснодар");
+    txTextOut    ( x, y, "The work is done");
+    txTextOut    ( x, y + 100, "by teacher of informatics");
+    txTextOut    ( x, y + 200, "Abramova Irina");
+    txTextOut    ( x, y + 300, "gimnasium 36, Krasnodar");
     }
 
 void MouseBody_draw (int x, int y, double width, double height, COLORREF bodyColor, COLORREF earsColor)
