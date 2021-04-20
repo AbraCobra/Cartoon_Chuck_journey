@@ -1,3 +1,5 @@
+
+
 //===========================================================================
 //         Abramova Irina, gymnasium 36, Krasnodar 2021
 //===========================================================================
@@ -9,6 +11,7 @@
 
 void EntryScene ();
 void SpringCountryScene();
+void SpringCountrySceneEscape();
 void PinkMountainScene();
 void NightSavanahScene();
 void NightSavanahSceneEnd();
@@ -29,6 +32,7 @@ void Cactus_draw         (int  x, int  y, double sizeX, double sizeY, COLORREF c
 void Flower_draw         (int  x, int  y, double sizeX, double sizeY, COLORREF flowerColor);
 void Reed_draw           (int  x, int  y, double sizeX, double sizeY, int swaying);
 void Chuck_draw          (int  x, int  y, double sizeX, double sizeY, int eyebrows, int hear);
+void Mouse_twerk         (int  x, int  y, double sizeX, double sizeY, int twerk, int tail_wagging);
 void Title_draw          (int  x, int  y);
 void TitleEnd_draw       (int  x, int  y);
 void WorkisDone          (int  x, int  y);
@@ -39,7 +43,9 @@ void CatBody_draw        (int  x, int  y, double width, double height, double ey
                           COLORREF catColor, COLORREF cat_breastColor);
 void Skateboard_draw     (int  x, int  y, double sizeX, double sizeY);
 void Skate_wheels_draw   (int x0, int y0, int r);
+void Cheese_draw         (int  x, int  y, double bigness);
 void BigDipper_draw      (int  x, int  y, int r);
+void Stick_draw          (int  x, int  y, double sizeX, double sizeY, int woodenarms);
 void Girl_draw           (int  x, int  y, double sizeX, double sizeY, int hands_UP,
                           int legs_DISTANCE,  int eyebrows_UP,
                           int eyesCRAZYleft,  int eyesPUPILleft,
@@ -55,6 +61,7 @@ int main()
 
     EntryScene();
     SpringCountryScene();
+    SpringCountrySceneEscape();
     PinkMountainScene ();
     NightSavanahScene ();
     NightSavanahSceneEnd();
@@ -109,7 +116,7 @@ void SpringCountryScene()
     txPlaySound (NULL);
     txPlaySound ("av014.wav", SND_LOOP);
 
-    int t = 0;
+    int t = 1;
     while (t <= 120)
         {
         txClear();
@@ -127,16 +134,30 @@ void SpringCountryScene()
         Butterfly_draw (t + 300, ROUND (abs (sin (t*0.5)*M_PI)*40 +  70), RGB (204, 155, 202), 2);
         Butterfly_draw (t + 500, ROUND (abs (sin (t*0.2)*M_PI)*70 + 100), RGB (255, 255, 113), 3);
 
-        Grass_draw     (350, 500, TX_GREEN, 1.1, 1.1);
-        CatBody_draw   (430, (t/3%2*50 - 30) + 400, 0.7, 0.6, 1.0, RGB (255, 157, 60), RGB (255, 245, 255));
-        MouseBody_draw (550, (t/4%2*50 - 50) + 500, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        CatBody_draw   (300 + 2*t, 400 + 0.1*t, 0.7, 0.6, 20.0, RGB (255, 157, 60), RGB (255, 245, 255));
 
-        Grass_draw     (350, 500, TX_GREEN, 1.1, 1.1);
-        Grass_draw     (450, 500, TX_GREEN, 0.9, 0.9);
-        Grass_draw     (460, 520, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (800, 480, TX_GREEN, 1.1, 1.1);
+        Grass_draw     (700, 580, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (750, 480, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (770, 490, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (710, 580, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (440, 600, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (470, 680, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (550, 500, TX_GREEN, 1.1, 1.1);
+        MouseBody_draw (750, (t/4%2*50 - 50) + 500, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        Cheese_draw    (800, 500, 1.0);
+        Mouse_twerk    (800, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
+        Mouse_twerk    (840, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
+        Mouse_twerk    (880, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
+        Mouse_twerk    (920, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
+        Mouse_twerk    (960, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
+        Mouse_twerk    (760, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
+        Mouse_twerk    (720, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
+        Mouse_twerk    (680, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
 
-        Girl_draw      (600 - 4*t, 500 - 0.5*t, 0.7, 0.7, (t/6%2*50) + 100, ((t/4)%2)*50 - 50,
-                       (t/2)%10, 0, 0, 0, 0, t%2*3, 0, RGB (219, 112, 147));
+        Girl_draw      (600 - 4*t, 500 - 0.5*t, 0.7, 0.7, 120,  ((t/4)%2)*50 - 50,
+                       -10, 0, 0, 0, 0, t%2*3, 0, RGB (219, 112, 147));
+        Stick_draw     (580 - 4*t, 380 - 0.5*t, 0.5, 0.5, (t%2*50)/7 - 20);
 
         Skateboard_draw     (- 100 + 11*t, 700, 0.8, 0.8);
         Skate_wheels_draw   (-  50 + 11*t + ROUND (4*cos(t)) + ROUND (3*sin(t)), 730 + ROUND (3*cos(t)) - ROUND (4*sin(t)), 20);
@@ -148,6 +169,60 @@ void SpringCountryScene()
 
     txEnd();
     }
+
+void SpringCountrySceneEscape()
+    {
+    txBegin();
+
+    int t = 0;
+    while (t <= 20)
+        {
+        txClear();
+        SpringFon();
+
+        Cloud_draw     (      2*t,  20, 1.2, 1.2, TX_WHITE);
+        Cloud_draw     (2*t + 900, 170, 0.5, 0.5, TX_WHITE);
+
+        Millblades_draw (675, 180, ROUND (  100*cos(t*0.1) + 675),        ROUND (  100*sin(t*0.1) + 180));
+        Millblades_draw (675, 180, ROUND (- 100*cos(t*0.1) + 675),        ROUND (- 100*sin(t*0.1) + 180));
+        Millblades_draw (675, 180, ROUND (- 100*cos(t*0.1  + 1.5) + 675), ROUND (- 100*sin(t*0.1  + 1.5) + 180));
+        Millblades_draw (675, 180, ROUND (  100*cos(t*0.1  + 1.5) + 675), ROUND (  100*sin(t*0.1  + 1.5) + 180));
+
+        Butterfly_draw (t + 600, ROUND (abs (sin (t*0.5)*M_PI)*40 +  50), RGB (204, 139,  51), 2);
+        Butterfly_draw (t + 300, ROUND (abs (sin (t*0.5)*M_PI)*40 +  70), RGB (204, 155, 202), 2);
+        Butterfly_draw (t + 500, ROUND (abs (sin (t*0.2)*M_PI)*70 + 100), RGB (255, 255, 113), 3);
+
+        Grass_draw     (800, 480, TX_GREEN, 1.1, 1.1);
+        Grass_draw     (700, 580, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (750, 480, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (770, 490, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (710, 580, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (440, 600, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (470, 680, TX_GREEN, 0.9, 0.9);
+        Grass_draw     (550, 500, TX_GREEN, 1.1, 1.1);
+
+        CatBody_draw   (800, 430, 0.7, 0.6, 20.0, RGB (255, 157, 60), RGB (255, 245, 255));
+        MouseBody_draw (750 + 70*t, 500, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        Cheese_draw    (800, 500, 1.0);
+        MouseBody_draw (800 + 50*t, 570 +     t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (840 + 50*t, 570 + 0.1*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (880 + 50*t, 570 + 0.2*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (920 + 50*t, 570 + 0.3*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (960 + 50*t, 570 + 0.3*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (760 + 50*t, 570 + 0.5*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (680 + 50*t, 570 + 0.6*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+
+        Girl_draw      (100, 450, 0.7, 0.7, 120,  ((t/4)%2)*50 - 50,
+                        -10, 0, 0, 0, 0, t%2*3, 0, RGB (219, 112, 147));
+        Stick_draw     ( 70, 330, 0.5, 0.5, (t%2*50)/7 - 20);
+
+        txSleep (100);
+        t++;
+        }
+
+    txEnd();
+    }
+
 
 void SpringFon()
     {
@@ -801,7 +876,7 @@ void Girl_draw (int x, int y, double sizeX, double sizeY, int hands_UP,
     txCircle       (x - 27*sizeX, y - 40*sizeY, (5 -  eyesPUPILleft)*sizeX);
     txCircle       (x + 27*sizeX, y - 40*sizeY, (5 - eyesPUPILright)*sizeX);
 
-    txSetColor(HairColor, 5);
+    txSetColor (HairColor, 5);
     txLine (           x,  y - 70*sizeY,            x,     y - 58*sizeY);
     txLine (x -  5*sizeX,  y - 68*sizeY, x -  5*sizeX,     y - 60*sizeY);
     txLine (x - 10*sizeX,  y - 66*sizeY, x - 10*sizeX,     y - 62*sizeY);
@@ -815,6 +890,40 @@ void Girl_draw (int x, int y, double sizeX, double sizeY, int hands_UP,
                            {x + ROUND (22*sizeX), y - ROUND ( 20*sizeY)},
                            {                   x, y - ROUND ((10 - mouthLOWERpoint)*sizeY)}};
     txPolygon (girlsMouth, 4);
+    }
+
+void Stick_draw (int  x, int  y, double sizeX, double sizeY, int woodenarms)
+    {
+    txSetColor (RGB (189, 183, 107), 12);
+    txLine ( x + 2*woodenarms, y - woodenarms, x + 210*sizeX, y + 180*sizeY);
+    }
+
+void Cheese_draw (int x, int y, double bigness)
+    {
+    txSetColor     (TX_LIGHTRED, 5);
+    txSetFillColor (RGB (181, 0, 0));
+    POINT cheese[3] = {{x, y}, {x - 140*bigness, y + 30*bigness}, {x + 150*bigness, y + 30*bigness}};
+    txPolygon (cheese, 3);
+
+    txSetColor     (RGB (181, 170,  43),2);
+    txSetFillColor (RGB (227, 221, 140));
+    txRectangle (x - 140*bigness, y + 30*bigness, x + 150*bigness, y + 80*bigness);
+    txCircle (x -  80*bigness, y + 50*bigness, 5*bigness);
+    txCircle (x -  45*bigness, y + 60*bigness, 5*bigness);
+    txCircle (x +  10*bigness, y + 40*bigness, 5*bigness);
+    txCircle (x +  60*bigness, y + 50*bigness, 5*bigness);
+    txCircle (x + 130*bigness, y + 55*bigness, 5*bigness);
+    }
+
+void Mouse_twerk (int x, int y, double sizeX, double sizeY, int twerk, int tail_wagging)
+    {
+    txSetColor     (RGB (128, 128, 128), 6);
+    txSetFillColor (RGB (169, 169, 169));
+    txCircle (x - (50 - twerk)*sizeX, y - 60*sizeY, 30*sizeX);
+    txCircle (x + (40 - twerk)*sizeX, y - 60*sizeY, 30*sizeX);
+    txCircle (x - twerk, y - twerk/10, 60*sizeX);
+    txSetColor (TX_BLACK, 2);
+    txLine   (x - twerk, y, x - tail_wagging, y - 150*sizeY);
     }
 
 void FinishTitles (int x, int y)
@@ -910,6 +1019,7 @@ void CatBody_draw (int x, int y, double width, double height, double eyebrows, C
     txSetFillColor (TX_LIGHTRED);
     txEllipse (x + 15*width, y - 20*height, x + 30*width, y - 14*height);
     }
+
 void Skate_wheels_draw (int x0, int y0,  int r)
     {
     txSetColor     (RGB ( 96, 123, 139), 15);
