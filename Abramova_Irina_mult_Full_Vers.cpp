@@ -1,5 +1,4 @@
 
-
 //===========================================================================
 //         Abramova Irina, gymnasium 36, Krasnodar 2021
 //===========================================================================
@@ -267,7 +266,6 @@ void PinkMountainScene()
     int inclination = 30;
     while (t <= 120)
         {
-
         txClear();
         MountainsLandscape();
 
@@ -665,7 +663,6 @@ void SavanahLandscape()
 void Cactus_draw  (int x, int y, double sizeX, double sizeY, COLORREF cactusColor)
     {
     txSetColor (cactusColor, 40/sizeY);
-
     txLine (           x,       y - 190/sizeY, x,            y + 170/sizeY);
     txLine (x - 50/sizeX,                   y, x + 60/sizeX,             y);
     txLine (x - 50/sizeX,                   y, x - 60/sizeX, y -  95/sizeY);
@@ -721,7 +718,6 @@ void Chuck_draw  (int x, int y, double sizeX, double sizeY, int eyebrows, int he
                          {x + ROUND (97*sizeX), y + ROUND (150*sizeY)}};
     txPolygon (beakDown, 3);
     }
-
 
 void Cloud_draw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor)
     {
@@ -1062,7 +1058,6 @@ void Reed_draw (int x, int y, double sizeX, double sizeY, int swaying)
                          {x - ROUND ((60 - swaying)*sizeX), y + ROUND (200*sizeY)}, {x - ROUND ((80 - swaying)*sizeX), y + ROUND (130*sizeY)},
                          {x - ROUND (( 5 - swaying)*sizeX), y + ROUND (390*sizeY)}};
     txPolygon (reedLeaf, 7);
-
     }
 
 void Flower_draw (int x, int y, double sizeX, double sizeY,  COLORREF flowerColor)
