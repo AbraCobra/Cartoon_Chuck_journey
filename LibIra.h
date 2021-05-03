@@ -1,4 +1,23 @@
-//function prototypes
+//{-----------------------------------------------------------------------------
+//! @brief         Function Library on C++ for animation developing
+//!
+//! @author        Abramova Irina
+//!             Krasnodar, gimnasium 36
+//!
+//!
+//! @date          May, 2021
+//!
+//! @mainpage
+//!                  Список функций:
+//!
+//!                - @ref SpringFon()
+//!                - @ref SpringFonBegining()
+//!
+//! @image html PinkMountainScene.png
+//}----------------------------------------------------------------------------
+
+
+
 
 void SpringFon();
 void SpringFonBegining();
