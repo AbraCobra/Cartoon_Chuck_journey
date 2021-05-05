@@ -1,7 +1,7 @@
 //{-----------------------------------------------------------------------------
 //! @brief         Function Library on C++ for animation developing
 //!
-//! @author        Abramova Irina
+//! @author        Abramova Irina,
 //!             Krasnodar, gimnasium 36
 //!
 //!
@@ -12,8 +12,34 @@
 //!
 //!                - @ref SpringFon()
 //!                - @ref SpringFonBegining()
+//!                - @ref MountainsLandscape()
+//!                - @ref SavanahLandscape()
+//!                - @ref Cloud_draw()
+//!                - @ref Tree_draw()
+//!                - @ref Water_lily_draw()
+//!                - @ref Cactus_draw()
+//!                - @ref Flower_draw()
+//!                - @ref Reed_draw()
+//!                - @ref Grass_draw()
+//!                - @ref Butterfly_draw()
+//!                - @ref Chuck_draw()
+//!                - @ref Mouse_twerk()
+//!                - @ref MouseBody_draw()
+//!                - @ref CatBody_draw()
+//!                - @ref WindMill_draw()
+//!                - @ref Millblades_draw()
+//!                - @ref BigDipper_draw()
+//!                - @ref Skateboard_draw()
+//!                - @ref Skate_wheels_draw()
+//!                - @ref Skateboard_draw()
+//!                - @ref Stick_draw()
+//!                - @ref Cheese_draw()
+//!                - @ref Girl_draw()
+//!                - @ref EMO_Cactus_draw()
 //!
-//! @image html PinkMountainScene.png
+//! @section screenshots     Скриншоты
+//! @note
+//! @image html PM.png
 //}----------------------------------------------------------------------------
 
 
@@ -150,7 +176,7 @@ void SpringFon()
 //! @note   Описание упомянутых функций см. ниже
 //----------------------------------------------------------------------------------------------
 
-void MountainsLandscape()Flower_draw
+void MountainsLandscape()
     {
     txSetColor      (RGB (255, 240, 245));
     txSetFillColor  (RGB (255, 240, 245));
@@ -223,9 +249,9 @@ void MountainsLandscape()Flower_draw
     txPolygon (sungreensecond, 3);
 
     POINT sungreenthird[3] = {{970, 410}, {1150, 480}, {1150, 550}};
-    txPolygon (sungreenthird, 3);Flower_draw
+    txPolygon (sungreenthird, 3);
 
-    //---------------------------------------------------------------------
+
 
     txSetColor      (RGB (0, 255, 252), 3);
     txSetFillColor  (RGB (0, 255, 252));
@@ -710,7 +736,7 @@ void Chuck_draw  (int x, int y, double sizeX, double sizeY, int eyebrows, int he
 
 
 //----------------------------------------------------------------------------------------------
-//!         Эта функция рисует скопление мышейю Вид сзади.
+//!         Эта функция рисует скопление мышей. Вид сзади.
 //!
 //! @param   x                    x - координата первой "мышки"
 //! @param   y                    y - координата первой "мышки"
