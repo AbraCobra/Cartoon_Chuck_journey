@@ -5,7 +5,7 @@
 //!             Krasnodar, gimnasium 36
 //!
 //!
-//! @date          May, 2021
+//! @date            May, 2021
 //!
 //! @mainpage
 //!                  Список функций:
@@ -31,30 +31,23 @@
 //!                - @ref BigDipper_draw()
 //!                - @ref Skateboard_draw()
 //!                - @ref Skate_wheels_draw()
-//!                - @ref Skateboard_draw()
 //!                - @ref Stick_draw()
 //!                - @ref Cheese_draw()
 //!                - @ref Girl_draw()
 //!                - @ref EMO_Cactus_draw()
+//!                - @ref Deffy()
 //!
 //! @section screenshots     Скриншоты
 //!
-//! ![картина маслом](Pink3.jpg)
-//! \image html Pink3.jpg
+//! @image html Entry1.png
+//! @image html Spring2.png
 //! @image html Pink3.png
+//! @image html Savanah4.png
 //!
-//! @table
-//! @tr @image html Entry1.png
-//! @td @image html Spring2.png
-//! @tr @image html Pink3.png
-//! @td @image html Savanah4.png
-//! @endtable
 //!
-//! <table>
-//!    <tr><td>Должна быть картинка<td>Должна быть картинка
-//!    <tr><td>Должна быть картинка<td>Должна быть картинка
-//! </table>
 //!
+//!
+//! @cats
 //}----------------------------------------------------------------------------
 
 
@@ -70,6 +63,8 @@ void Flower_draw         (int  x, int  y, double sizeX, double sizeY, COLORREF f
 void Reed_draw           (int  x, int  y, double sizeX, double sizeY, int swaying);
 void Grass_draw          (int  x, int  y, COLORREF color, double sizeX, double sizeY);
 void Butterfly_draw      (int  x, int  y, COLORREF color, int bigness);
+void Deffy               (int x, int y, double sizeX, double sizeY, int flapping, int hornDistance, COLORREF wingcolor,
+                          COLORREF bigpatterncolor, COLORREF smallpatterncolor, COLORREF outlinecolor, COLORREF Deffycolor);
 void Chuck_draw          (int  x, int  y, double sizeX, double sizeY, int eyebrows, int hear);
 void Mouse_twerk         (int  x, int  y, double sizeX, double sizeY, int twerk, int tail_wagging);
 void MouseBody_draw      (int  x, int  y, double width, double height, COLORREF bodyColor, COLORREF earsColor);
@@ -99,10 +94,13 @@ void EMO_Cactus_draw     (int x, int y, double sizeX, double sizeY, int eyebrows
 //!         Параметры отсутствуют, градиентный переход окраски неба достигается за счет итерации
 //!         компонент RGB.
 //!
-//! @see    SpringFonBegining();  SpringFon();
+//! \image html Entry1.png "SpringFon" width=250px
 //!
-//! @note   Неплохо дополнять данные функции такими объектами как: Cloud_draw(), Tree_draw(),
-//! @note   Grass_draw(), и так далее. Описание упомянутых функции см. ниже
+//!  @see    SpringFonBegining();  SpringFon();
+//!
+//!  @note   Неплохо дополнять данные функции такими объектами как: Cloud_draw(), Tree_draw(),
+//!  @note   Grass_draw(), и так далее. Описание упомянутых функции см. ниже
+//!
 //}----------------------------------------------------------------------------------------------
 
 void SpringFonBegining()
@@ -133,6 +131,8 @@ void SpringFonBegining()
 
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция также  рисует ясное градиентное небо и небольшой зеленый холм.
+//!
+//! \image html Spring.png "SpringFon"
 //!
 //!         Параметры отсутствуют, градиентный переход окраски неба достигается за счет итерации
 //!         компонет RGB.
@@ -182,7 +182,9 @@ void SpringFon()
 //!         цвета, и реки.
 //!         Параметры отсутствуют.
 //!
-//! @see    MountainsLandscape()
+//! \image html Mountain.png "Pink Mountains"
+//!
+//! @see    Reed_draw ();  Water_lily_draw ()
 //!
 //! @note   Неплохо дополнить данную функцию объектами: Water_lily_draw (), Reed_draw()
 //! @note   (кувшинка и камыш)
@@ -285,7 +287,9 @@ void MountainsLandscape()
 //!         Эта функция рисует  пейзаж ночной пустыни.
 //!         Параметры отсутствуют.
 //!
-//! @see    SavanahLandscape()
+//! \image html Savanah.png "SavanahLands"
+//!
+//! @see    Cactus_draw (); BigDipper_draw();
 //!
 //! @note   Неплохо дополнить данную функцию объектами: Cactus_draw (), BigDipper_draw()
 //! @note   (кактус и созвездие "Большая медведица")
@@ -365,13 +369,15 @@ void SavanahLandscape()
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует  облако.
 //!
-//! @param  x                    x - координата первого эллипса
-//! @param  y                    y - координата первого эллипса
-//! @param  sizeX                Размер облака
-//! @param  sizeY                Размер облака
-//! @param  COLORREF cloudColor  Цвет облака
+//! \image html Cloud.png "Облако" width=290px
 //!
-//! @see    Cloud_draw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor)
+//! @param  x                           x - координата первого эллипса
+//! @param  y                           y - координата первого эллипса
+//! @param  sizeX                       Размер облака
+//! @param  sizeY                       Размер облака
+//! @param  COLORREF cloudColor         Цвет облака
+//!
+//! @see    SpringFonBegining();  SpringFon();
 //!
 //! @par    Пример использования:
 //!
@@ -394,6 +400,8 @@ void Cloud_draw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor)
 //!         Эта функция рисует ДИСКО - дерево. Оно переливается различными оттенками
 //!         зеленого цвета.
 //!
+//! \image html Tree.png "ДИСКО - дерево" width=280px
+//!
 //! @param  x                    x - координата верхушки ствола
 //! @param  y                    y - координата верхушки ствола
 //! @param  sizeX                Размер дерева
@@ -403,7 +411,6 @@ void Cloud_draw (int x, int y, double sizeX, double sizeY, COLORREF cloudColor)
 //! @note   Дерево строится при помощи циклов. Цвет задается рандомно в определенном
 //! @note   диапазоне RGB.
 //!
-//! @see    Tree_draw (int x, int y, int crown_width, double sizeX, double sizeY)
 //!
 //! @par    Пример использования:
 //!
@@ -444,6 +451,8 @@ void Tree_draw (int x, int y, int crown_width, double sizeX, double sizeY)
 //!         Эта функция рисует незамысловатую водяную лилию. Которую можно использовать как
 //!         средство передвижения по реке.
 //!
+//! \image html Lili.png "Кувшинка" width=280px
+//!
 //! @param  x                    x - координата центра лепестка
 //! @param  y                    y - координата центра лепестка
 //! @param  sizeX                Размер лилии
@@ -452,7 +461,7 @@ void Tree_draw (int x, int y, int crown_width, double sizeX, double sizeY)
 //! @note   Замечательно сочетается с водоемами!
 //!
 //!
-//! @see    Water_lily_draw  (int  x, int  y, double sizeX, double sizeY)
+//! @see    Reed_draw()
 //!
 //! @par    Пример использования:
 //!
@@ -487,6 +496,8 @@ void Water_lily_draw  (int  x, int  y, double sizeX, double sizeY)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует кактус. Змечательное дополнение к ночной пустыне!
 //!
+//! \image html Cactus.png "Кактус обыкновенный" width=280px
+//!
 //! @param  x                    x - координата центра ствола
 //! @param  y                    y - координата центра ствола
 //! @param  sizeX                Размер кактуса (доп. толщина ствола)
@@ -496,12 +507,12 @@ void Water_lily_draw  (int  x, int  y, double sizeX, double sizeY)
 //! @note   Замечательно сочетается с цветочками! (Flower_draw())
 //!
 //!
-//! @see    Cactus_draw (int  x, int  y, double sizeX, double sizeY, COLORREF cactusColor);
+//! @see    EMO_Cactus_draw()
 //!
 //! @par    Пример использования:
 //!
 //! @code
-//!         Water_lily_draw (150, 700, 0.8, 0.8);
+//!         Cactus_draw    ( 270, 450, 2, 2, RGB (102,   0,  51));
 //! @endcode
 //}----------------------------------------------------------------------------------------------
 
@@ -520,16 +531,15 @@ void Cactus_draw  (int x, int y, double sizeX, double sizeY, COLORREF cactusColo
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует классические цветы из окружностей.
 //!
+//! \image html Flower.png "Цветок обыкновенный" width=280px
+//!
 //! @param  x                    x - координата центра цветка
 //! @param  y                    y - координата центра цветка
 //! @param  sizeX                Размер цветка
 //! @param  sizeY                Размер цветка
-//! @param  COLORREF cactusColor Цвет цветка
+//! @param  COLORREF flowerColor Цвет цветка
 //!
 //! @note   Замечательно сочетается с различной растительностью
-//!
-//!
-//! @see    Flower_draw (int x, int y, double sizeX, double sizeY,  COLORREF flowerColor)
 //!
 //! @par    Пример использования:
 //!
@@ -557,6 +567,8 @@ void Flower_draw (int x, int y, double sizeX, double sizeY,  COLORREF flowerColo
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует камыши.
 //!
+//! \image html Lili.png "Камыши" width=280px
+//!
 //! @param   x                    x - координата центра первой окружности
 //! @param   y                    y - координата центра первой окружности
 //! @param   sizeX                Размер камыша
@@ -565,7 +577,7 @@ void Flower_draw (int x, int y, double sizeX, double sizeY,  COLORREF flowerColo
 //!
 //!
 //!
-//! @see     Reed_draw (int x, int y, double sizeX, double sizeY, int swaying)
+//! @see     Water_lily_draw()
 //!
 //! @par     Пример использования:
 //!
@@ -601,13 +613,14 @@ void Reed_draw (int x, int y, double sizeX, double sizeY, int swaying)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует траву
 //!
+//! \image html Grass.png "Трава" width=280px
+//!
 //! @param   x                    x - координата первой точки полигона куста
 //! @param   y                    y - координата первой точки полигона куста
 //! @param   sizeX                Размер куста
 //! @param   sizeY                Размер куста
 //! @param   COLORREF color       Цвет травы
 //!
-//! @see     Grass_draw (int x, int y, COLORREF color, double sizeX, double sizeY)
 //!
 //! @par     Пример использования:
 //!
@@ -635,12 +648,14 @@ void Grass_draw (int x, int y, COLORREF color, double sizeX, double sizeY)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует бабочку
 //!
+//! \image html Butterfly.png "Бабочка" width=280px
+//!
 //! @param   x                    x - координата цетра головы бабочки
 //! @param   y                    y - координата цетра головы бабочки
 //! @param   bigness              Размер бабочки (радиус окружностей, составных частей бабочки)
 //! @param   COLORREF color       Цвет бабочки
 //!
-//! @see     Butterfly_draw (int x, int y, COLORREF color, int bigness)
+//! @see     Deffy()
 //!
 //! @par     Пример использования:
 //!
@@ -679,9 +694,123 @@ void Butterfly_draw (int x, int y, COLORREF color, int bigness)
     txPolygon (wingR, 3);
     }
 
+//{----------------------------------------------------------------------------------------------
+//!         Эта функция рисует большую красивую бабочку
+//!
+//! \image html Deffy.png "Деффи - шикарная" width=280px
+//!
+//! @param   x                    x - координата цетра головы бабочки
+//! @param   y                    y - координата цетра головы бабочки
+//! @param   sizeX                Размер бабочки
+//! @param   sizeY                Размер бабочки
+//! @param   flapping             Размер крыла (эффект взмаха крыла)
+//! @param   hornDistance         Расстояние между усиками
+//!
+//! @param   COLORREF wingcolor             Цвет крыльев
+//! @param   COLORREF bigpatterncolor       Цвет узора большого крыла
+//! @param   COLORREF smallpatterncolor     Цвет узора малого крыла
+//! @param   COLORREF outlinecolor          Цвет контура
+//! @param   COLORREF Deffycolor            Цвет бабочки
+//!
+//! @see     Butterfly_draw()
+//!
+//! @par     Пример использования:
+//!
+//! @code
+//!          Deffy (110, 150, 0.6, 0.6, 10, 5,  RGB (217, 0, 217),
+//!                 RGB (56, 160, 56), RGB (130, 66, 151), RGB (55, 183, 193), RGB (242, 238, 77));
+//! @endcode
+//}----------------------------------------------------------------------------------------------
+void Deffy (int x, int y, double sizeX, double sizeY, int flapping, int hornDistance, COLORREF wingcolor,
+            COLORREF bigpatterncolor, COLORREF smallpatterncolor, COLORREF outlinecolor, COLORREF Deffycolor)
+    {
+    txSetColor     (outlinecolor, 2);
+    txSetFillColor (wingcolor);                        //x=590, y=190
+
+    POINT BigWingR[7] = {{x, y}, {x +  60*sizeX - flapping, y - 104*sizeY + flapping/2},
+                                 {x + 115*sizeX - flapping, y - 110*sizeY + flapping/2},
+                                 {x + 138*sizeX - flapping, y -  82*sizeY + flapping/2},
+                                 {x + 138*sizeX - flapping, y -  40*sizeY + flapping/2},
+                                 {x + 108*sizeX - flapping, y -  12*sizeY + flapping/2},
+                         {x, y}};
+
+    txPolygon (BigWingR, 7);
+
+    POINT BigWingL[7] = {{x, y}, {x -  60*sizeX + flapping, y - 104*sizeY + flapping/2},
+                                 {x - 115*sizeX + flapping, y - 110*sizeY + flapping/2},
+                                 {x - 138*sizeX + flapping, y -  82*sizeY + flapping/2},
+                                 {x - 138*sizeX + flapping, y -  40*sizeY + flapping/2},
+                                 {x - 108*sizeX + flapping, y -  12*sizeY + flapping/2},
+                         {x, y}};
+
+    txPolygon (BigWingL, 7);
+
+
+    POINT SmallWingR[5] = {{x, y}, {x + 101*sizeX - flapping, y },
+                                   {x + 110*sizeX - flapping, y + 50*sizeY },
+                                   {x +  60*sizeX - flapping, y + 78*sizeY }, {x, y}};
+
+    txPolygon (SmallWingR, 5);
+
+
+    POINT SmallWingL[5] = {{x, y}, {x - 101*sizeX + flapping, y},
+                                   {x - 110*sizeX + flapping, y + 50*sizeY},
+                                   {x -  60*sizeX + flapping, y + 78*sizeY}, {x, y}};
+
+    txPolygon (SmallWingL, 5);
+
+//========================================================================================
+    txSetColor     (bigpatterncolor);
+    txSetFillColor (bigpatterncolor);
+
+    POINT BigpatternR [4]= {{x, y}, {x + 122*sizeX - flapping, y - 100*sizeY + flapping/2},
+                                    {x + 140*sizeX - flapping, y -  80*sizeY + flapping/2},
+                                    {x + 138*sizeX - flapping, y -  60*sizeY + flapping/2}};
+    txPolygon (BigpatternR, 4);
+
+    POINT BigpatternL [4]= {{x, y}, {x - 122*sizeX + flapping, y - 100*sizeY + flapping/2},
+                                    {x - 140*sizeX + flapping, y -  80*sizeY + flapping/2},
+                                    {x - 138*sizeX + flapping, y -  60*sizeY + flapping/2}};
+    txPolygon (BigpatternL, 4);
+
+    txSetColor     (smallpatterncolor);
+    txSetFillColor (smallpatterncolor);
+
+    POINT SmallpatternR [4]= {{x, y}, {x + 107*sizeX - flapping, y + 35*sizeY},
+                                      {x + 113*sizeX - flapping, y + 50*sizeY},
+                                      {x +  93*sizeX - flapping, y + 60*sizeY}};
+    txPolygon (SmallpatternR, 4);
+
+    POINT SmallpatternL [4]= {{x, y}, {x - 107*sizeX + flapping, y + 35*sizeY},
+                                      {x - 113*sizeX + flapping, y + 50*sizeY},
+                                      {x -  93*sizeX + flapping, y + 60*sizeY}};
+    txPolygon (SmallpatternL, 4);
+
+     txSetColor     (Deffycolor, 2);
+     txSetFillColor (Deffycolor);
+
+     txLine   (           x, y -  32*sizeY, x +  28*sizeX, y -  52*sizeY);
+     txLine   (x + 28*sizeX, y -  52*sizeY, x +  40*sizeX, y -  88*sizeY);
+     txLine   (x + 40*sizeX, y -  88*sizeY, x +  30*sizeX - hornDistance, y - 120*sizeY - hornDistance);
+     txCircle (x + 30*sizeX - hornDistance, y - 120*sizeY - hornDistance, 5*sizeX);
+//===================================================================
+     txLine   (           x, y -  32*sizeY, x - 28*sizeX, y -  52*sizeY);
+     txLine   (x - 28*sizeX, y -  52*sizeY, x - 40*sizeX, y -  88*sizeY);
+     txLine   (x - 40*sizeX, y -  88*sizeY, x - 30*sizeX + hornDistance, y - 120*sizeY - hornDistance);
+     txCircle (x - 30*sizeX + hornDistance, y - 120*sizeY - hornDistance, 5*sizeX);
+
+
+     POINT DeffyBody[8] = {{x, y - 40*sizeY}, {x - 5*sizeX, y - 30*sizeY}, {x - 2*sizeX, y - 20*sizeY},
+                          {x - 10*sizeX, y}, {x, y + 60*sizeY},
+                          {x + 10*sizeX, y}, {x + 3*sizeX, y - 20*sizeY}, {x + 5*sizeX, y - 30*sizeY}};
+     txPolygon (DeffyBody,8);
+
+     }
 
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует маленькую желтую птичку из "Angry birds".
+//!
+//! \image html Chuck.png "Чак - птичка" width=280px
 //!
 //! @param   x                    x - координата верхней точки головы
 //! @param   y                    y - координата верхней точки головы
@@ -689,8 +818,6 @@ void Butterfly_draw (int x, int y, COLORREF color, int bigness)
 //! @param   sizeY                Размер птички
 //! @param   eyebrows             Подьем бровей
 //! @param   hear                 Подьем хохолка
-//!
-//! @see     Chuck_draw  (int x, int y, double sizeX, double sizeY, int eyebrows, int hear)
 //!
 //! @par     Пример использования:
 //!
@@ -751,6 +878,8 @@ void Chuck_draw  (int x, int y, double sizeX, double sizeY, int eyebrows, int he
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует скопление мышей. Вид сзади.
 //!
+//! \image html Twerk.png "Мышки - вид сзади" width=280px
+//!
 //! @param   x                    x - координата первой "мышки"
 //! @param   y                    y - координата первой "мышки"
 //! @param   sizeX                Размер мышек
@@ -758,7 +887,7 @@ void Chuck_draw  (int x, int y, double sizeX, double sizeY, int eyebrows, int he
 //! @param   twerk                Отклонение положения мышки
 //! @param   tail_wagging         Колебания хвостика
 //!
-//! @see     Mouse_twerk (int x, int y, double sizeX, double sizeY, int twerk, int tail_wagging)
+//! @see     MouseBody_draw()
 //!
 //! @par     Пример использования:
 //!
@@ -784,6 +913,8 @@ void Mouse_twerk (int x, int y, double sizeX, double sizeY, int twerk, int tail_
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует полноценную мышку (Вид сбоку)
 //!
+//! \image html Mouse.png "Мышки" width=280px
+//!
 //! @param   x                    x - координата "шеи" мышки
 //! @param   y                    y - координата "шеи" мышки
 //! @param   width                Размер мышки (по x)
@@ -791,7 +922,7 @@ void Mouse_twerk (int x, int y, double sizeX, double sizeY, int twerk, int tail_
 //! @param   COLORREF bodyColor   Цвет мышки
 //! @param   COLORREF earsColor   Цвет ушек мышки
 //!
-//! @see     MouseBody_draw (int x, int y, double width, double height, COLORREF bodyColor, COLORREF earsColor)
+//! @see     Mouse_twerk()
 //!
 //! @par     Пример использования:
 //!
@@ -837,6 +968,8 @@ void MouseBody_draw (int x, int y, double width, double height, COLORREF bodyCol
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует котика.
 //!
+//!\image html Cat.png "Котик" width=280px
+//!
 //! @param   x                        x - координата центра головы
 //! @param   y                        y - координата центра головы
 //! @param   width                    Размер котика
@@ -844,9 +977,6 @@ void MouseBody_draw (int x, int y, double width, double height, COLORREF bodyCol
 //! @param   eyebrows                 Подьем бровей котика
 //! @param   COLORREF catColor        Цвет котика
 //! @param   COLORREF cat_breastColor Цвет грудки котика
-//!
-//!
-//! @see     CatBody_draw (int x, int y, double width, double height, double eyebrows, COLORREF catColor, COLORREF cat_breastColor)
 //!
 //! @par     Пример использования:
 //!
@@ -903,12 +1033,14 @@ void CatBody_draw (int x, int y, double width, double height, double eyebrows, C
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует здание мельницы.
 //!
+//!\image html Mill.png "Мельница"
+//!
 //! @param   x          x - координата верхней точки мельницы
 //! @param   y          y - координата верхней точки мельницы
 //! @param   sizeX      Размер башни
 //! @param   sizeY      Размер башни
 //!
-//! @see     WindMill_draw (int x, int y, double sizeX, double sizeY)
+//! @see     Millblades_draw()
 //!
 //! @par     Пример использования:
 //!
@@ -932,12 +1064,14 @@ void WindMill_draw (int x, int y, double sizeX, double sizeY)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует крылья мельницы.
 //!
+//! \image html Mill.png "Мельница"
+//!
 //! @param   x0          x0 - верхней точки крыла
 //! @param   y0          y0 - верхней точки крыла
 //! @param   x           x  - нижней точки крыла
 //! @param   y           y  - нижней точки крыла
 //!
-//! @see     Millblades_draw (int x0, int y0, int x, int y)
+//! @see     WindMill_draw()
 //!
 //! @par     Пример использования:
 //!
@@ -956,11 +1090,11 @@ void Millblades_draw (int x0, int y0, int x, int y)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует созвездие " Большая медведица"
 //!
-//! @param   x          x - центр первой звезды
-//! @param   y          y - центр первой звезды
-//! @param   r          радиус звезды
+//! \image html BigDipper.png "Большая медведица"
 //!
-//! @see     BigDipper_draw (int x, int y, int r)
+//! @param  x           x - центр первой звезды
+//! @param  y           y - центр первой звезды
+//! @param  r           радиус звезды
 //!
 //! @par     Пример использования:
 //!
@@ -986,12 +1120,14 @@ void BigDipper_draw ( int x, int y, int r)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует скейтбоард (без колес)
 //!
+//! \image html Skate.png "Скейтбоард"
+//!
 //! @param   x          x - координата левого угла эллипса
 //! @param   y          y - координата левого угла эллипса
 //! @param   sizeX      Размер доски
 //! @param   sizeY      Размер доски
 //!
-//! @see     Skateboard_draw  (int x, int y, double sizeX, double sizeY)
+//! @see     Skate_wheels_draw()
 //!
 //! @par     Пример использования:
 //!
@@ -1011,12 +1147,14 @@ void Skateboard_draw   (int x, int y, double sizeX, double sizeY)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует колеса для скейтбоарда
 //!
+//! \image html Skate.png "Скейтбоард"
+//!
 //! @param   x0          x - координата центра первого колеса
 //! @param   y0          y - координата центра первого колеса
 //! @param   r           Радиус колес
 //!
 //!
-//! @see     Skate_wheels_draw (int x0, int y0,  int r)
+//! @see     Skateboard_draw()
 //!
 //! @par     Пример использования:
 //!
@@ -1038,13 +1176,13 @@ void Skate_wheels_draw (int x0, int y0,  int r)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует просто палку.
 //!
+//! \image html Stick.png "Многофункциональная палка"
+//!
 //! @param   x               x - координата верхней точки палки
 //! @param   y               y - координата верхней точки палки
 //! @param   sizeX           Размер палки
 //! @param   sizeY           Размер палки
 //! @param   woodenarms      Положение палки
-//!
-//! @see     Stick_draw (int x, int y, double sizeX, double sizeY, int woodenarms)
 //!
 //! @par     Пример использования:
 //!
@@ -1064,11 +1202,11 @@ void Stick_draw (int  x, int  y, double sizeX, double sizeY, int woodenarms)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует кусок сыра.
 //!
+//! \image html Cheese.png "Кусок сыра"
+//!
 //! @param   x               x - координата крайней левой точки куска
 //! @param   y               y - координата крайней левой точки куска
 //! @param   bigness         Размер куска сыра
-//!
-//! @see     Cheese_draw (int x, int y, double bigness)
 //!
 //! @par     Пример использования:
 //!
@@ -1098,6 +1236,8 @@ void Cheese_draw (int x, int y, double bigness)
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует девочку.
 //!
+//! \image html Girl.png "Девочка"
+//!
 //! @param   x                  x - координата шеи девочки
 //! @param   y                  y - координата шеи девочки
 //! @param   sizeX              Размер девочки
@@ -1114,10 +1254,6 @@ void Cheese_draw (int x, int y, double bigness)
 //! @param   COLORREF HairColor Цвет волос
 //! @param   COLORREF BodyColor Цвет тела
 //!
-//! @see     Girl_draw (int x, int y, double sizeX, double sizeY, int hands_UP,
-//!                int legs_DISTANCE, int eyebrows_UP,    int eyesCRAZYleft,
-//!                int eyesPUPILleft, int eyesCRAZYright, int eyesPUPILright,
-//!                int mouthTOPpoint, int mouthLOWERpoint, COLORREF HairColor, COLORREF BodyColor)
 //!
 //! @par      Пример использования:
 //!
@@ -1210,6 +1346,8 @@ void Girl_draw (int x, int y, double sizeX, double sizeY, int hands_UP,
 //{----------------------------------------------------------------------------------------------
 //!         Эта функция рисует кактус с рожицей в цветочном горшке.
 //!
+//! \image html Emo.png "Эмо - кактус"
+//!
 //! @param   x                  x - координата левой крайней точки горшка
 //! @param   y                  y - координата левой крайней точки горшка
 //! @param   sizeX              Размер композиции
@@ -1221,14 +1359,12 @@ void Girl_draw (int x, int y, double sizeX, double sizeY, int hands_UP,
 //! @param   eyesPUPILright     Размер правого зрачка
 //! @param   mouthLOWERpoint    Положение нижней точки рта
 //!
-//! @see     void EMO_Cactus_draw  (int x, int y, double sizeX, double sizeY, int eyebrows_UP,
-//!                                 int eyesCRAZYleft,  int eyesPUPILleft, int eyesCRAZYright,
-//!                                 int eyesPUPILright, int mouthLOWERpoint)
+//! @see     Cactus_draw ()
 //!
 //! @par     Пример использования:
 //!
 //! @code
-//!          Cactus_drawer (200, 500, 0.4, 0.4, 20, 10, 1, 10, 1, - 25);
+//!          EMO_Cactus_draw (200, 500, 0.4, 0.4, 20, 10, 1, 10, 1, - 25);
 //! @endcode
 //}----------------------------------------------------------------------------------------------
 
