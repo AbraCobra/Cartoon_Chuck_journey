@@ -269,7 +269,7 @@ TAB_SIZE               = 4
 # commands \{ and \} for these it is advised to use the version @{ and @} or use
 # a double escape (\\{ and \\})
 
-ALIASES                =
+ALIASES                = "cats=котики прекрасны"
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
 # only. Doxygen will then generate output that is more tailored for C. For
@@ -864,8 +864,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  =  \
-                         C:\Cartoon_Chuck_journey\LibIra.h \
+INPUT                  = C:\Cartoon_Chuck_journey\LibIra.h \
                          C:\Cartoon_Chuck_journey\Abramova_Irina_mult_Full_Vers.cpp
 
 # This tag can be used to specify the character encoding of the source files
@@ -1007,7 +1006,7 @@ EXAMPLE_RECURSIVE      = NO
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             =
+IMAGE_PATH             = DoxyPic
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
