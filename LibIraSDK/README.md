@@ -24,7 +24,7 @@ But does small  harm  as usual.*
 - Chuck_draw() - *(animated)*
 - Title_draw() - *(animated)*
 
-![EntryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/EntryScene.png)
+![EntryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/ReadmeScreenshoots/EntryScene.png)
 
 ***2. SpringCountryScene() includes next functions:***
 - SpringFon()
