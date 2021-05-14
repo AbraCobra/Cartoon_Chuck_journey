@@ -24,7 +24,7 @@ But does small  harm  as usual.*
 - Chuck_draw() - *(animated)*
 - Title_draw() - *(animated)*
 
-![EntryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/ReadmeScreenshoots/EntryScene.png)
+![EntryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/LibIraSDK/ReadmeScreenshoots/EntryScene.png)
 
 ***2. SpringCountryScene() includes next functions:***
 - SpringFon()
@@ -37,7 +37,7 @@ But does small  harm  as usual.*
 - CatBody_draw() - *(animated)*
 - Girl_draw - *(animated)*
 
-![SpringCountryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/SpringCountryScene.png)
+![SpringCountryScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/LibIraSDK/ReadmeScreenshoots/SpringCountryScene.png)
 
 ***3. PinkMountainScene() includes next functions:***
 - MountainsLandscape()
@@ -45,17 +45,17 @@ But does small  harm  as usual.*
 - Reed_draw()   - *(animated)*
 - Chuck_draw() - *(animated)*
 
-![PinkMountainScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/PinkMountainScene.png)
+![PinkMountainScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/LibIraSDK/ReadmeScreenshoots/PinkMountainScene.png)
 
 ***4. Three next scene include the same functions:***
 - SavanahLandscape()
 - Flower_draw()  - *(animated)*
 - Chuck_draw()  - *(animated)*
 
-![NightSavanahScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/NightSavanahScene.png)
+![NightSavanahScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/LibIraSDK/ReadmeScreenshoots/NightSavanahScene.png)
 
 
-![NightSavanahSceneEndFalling](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/NightSavanahSceneEndFalling.png)
+![NightSavanahSceneEndFalling](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/LibIraSDK/ReadmeScreenshoots/NightSavanahSceneEndFalling.png)
 
 ***5. Final scene FinishScene()
 includes functions:***
@@ -66,4 +66,4 @@ includes functions:***
 - FinishTitles() - *(animated)*
 - WorkisDone () - *(animated)*
 
-![FinishScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/PICTURES/FinalScene.png)
+![FinishScene](https://github.com/AbraCobra/Cartoon_Chuck_journey/blob/main/LibIraSDK/ReadmeScreenshoots/FinalScene.png)
