@@ -727,35 +727,35 @@ void Deffy (int x, int y, double sizeX, double sizeY, int flapping, int hornDist
     txSetColor     (outlinecolor, 2);
     txSetFillColor (wingcolor);                        //x=590, y=190
 
-    POINT BigWingR[7] = {{x, y}, {x +  60*sizeX - flapping, y - 104*sizeY + flapping/2},
-                                 {x + 115*sizeX - flapping, y - 110*sizeY + flapping/2},
-                                 {x + 138*sizeX - flapping, y -  82*sizeY + flapping/2},
-                                 {x + 138*sizeX - flapping, y -  40*sizeY + flapping/2},
-                                 {x + 108*sizeX - flapping, y -  12*sizeY + flapping/2},
+    POINT BigWingR[7] = {{x, y}, {x + ROUND( 60*sizeX) - flapping, y -  ROUND(104*sizeY) + flapping/2},
+                                 {x + ROUND(115*sizeX) - flapping, y -  ROUND(110*sizeY) + flapping/2},
+                                 {x + ROUND(138*sizeX) - flapping, y -  ROUND( 82*sizeY) + flapping/2},
+                                 {x + ROUND(138*sizeX) - flapping, y -  ROUND( 40*sizeY) + flapping/2},
+                                 {x + ROUND(108*sizeX) - flapping, y -  ROUND( 12*sizeY) + flapping/2},
                          {x, y}};
 
     txPolygon (BigWingR, 7);
 
-    POINT BigWingL[7] = {{x, y}, {x -  60*sizeX + flapping, y - 104*sizeY + flapping/2},
-                                 {x - 115*sizeX + flapping, y - 110*sizeY + flapping/2},
-                                 {x - 138*sizeX + flapping, y -  82*sizeY + flapping/2},
-                                 {x - 138*sizeX + flapping, y -  40*sizeY + flapping/2},
-                                 {x - 108*sizeX + flapping, y -  12*sizeY + flapping/2},
+    POINT BigWingL[7] = {{x, y}, {x - ROUND( 60*sizeX) + flapping, y -  ROUND(104*sizeY) + flapping/2},
+                                 {x - ROUND(115*sizeX) + flapping, y -  ROUND(110*sizeY) + flapping/2},
+                                 {x - ROUND(138*sizeX) + flapping, y -  ROUND( 82*sizeY) + flapping/2},
+                                 {x - ROUND(138*sizeX) + flapping, y -  ROUND( 40*sizeY) + flapping/2},
+                                 {x - ROUND(108*sizeX) + flapping, y -  ROUND( 12*sizeY) + flapping/2},
                          {x, y}};
 
     txPolygon (BigWingL, 7);
 
 
-    POINT SmallWingR[5] = {{x, y}, {x + 101*sizeX - flapping, y },
-                                   {x + 110*sizeX - flapping, y + 50*sizeY },
-                                   {x +  60*sizeX - flapping, y + 78*sizeY }, {x, y}};
+    POINT SmallWingR[5] = {{x, y}, {x + ROUND(101*sizeX) - flapping, y },
+                                   {x + ROUND(110*sizeX) - flapping, y + ROUND(50*sizeY) },
+                                   {x + ROUND( 60*sizeX) - flapping, y + ROUND(78*sizeY) }, {x, y}};
 
     txPolygon (SmallWingR, 5);
 
 
-    POINT SmallWingL[5] = {{x, y}, {x - 101*sizeX + flapping, y},
-                                   {x - 110*sizeX + flapping, y + 50*sizeY},
-                                   {x -  60*sizeX + flapping, y + 78*sizeY}, {x, y}};
+    POINT SmallWingL[5] = {{x, y}, {x - ROUND(101*sizeX) + flapping, y},
+                                   {x - ROUND(110*sizeX) + flapping, y + ROUND(50*sizeY)},
+                                   {x - ROUND( 60*sizeX) + flapping, y + ROUND(78*sizeY)}, {x, y}};
 
     txPolygon (SmallWingL, 5);
 
@@ -763,46 +763,49 @@ void Deffy (int x, int y, double sizeX, double sizeY, int flapping, int hornDist
     txSetColor     (bigpatterncolor);
     txSetFillColor (bigpatterncolor);
 
-    POINT BigpatternR [4]= {{x, y}, {x + 122*sizeX - flapping, y - 100*sizeY + flapping/2},
-                                    {x + 140*sizeX - flapping, y -  80*sizeY + flapping/2},
-                                    {x + 138*sizeX - flapping, y -  60*sizeY + flapping/2}};
+    POINT BigpatternR [4]= {{x, y}, {x + ROUND(122*sizeX) - flapping, y - ROUND(100*sizeY) + flapping/2},
+                                    {x + ROUND(140*sizeX) - flapping, y - ROUND( 80*sizeY) + flapping/2},
+                                    {x + ROUND(138*sizeX) - flapping, y - ROUND( 60*sizeY) + flapping/2}};
     txPolygon (BigpatternR, 4);
 
-    POINT BigpatternL [4]= {{x, y}, {x - 122*sizeX + flapping, y - 100*sizeY + flapping/2},
-                                    {x - 140*sizeX + flapping, y -  80*sizeY + flapping/2},
-                                    {x - 138*sizeX + flapping, y -  60*sizeY + flapping/2}};
+    POINT BigpatternL [4]= {{x, y}, {x - ROUND(122*sizeX) + flapping, y - ROUND(100*sizeY) + flapping/2},
+                                    {x - ROUND(140*sizeX) + flapping, y - ROUND( 80*sizeY) + flapping/2},
+                                    {x - ROUND(138*sizeX) + flapping, y - ROUND( 60*sizeY) + flapping/2}};
     txPolygon (BigpatternL, 4);
 
     txSetColor     (smallpatterncolor);
     txSetFillColor (smallpatterncolor);
 
-    POINT SmallpatternR [4]= {{x, y}, {x + 107*sizeX - flapping, y + 35*sizeY},
-                                      {x + 113*sizeX - flapping, y + 50*sizeY},
-                                      {x +  93*sizeX - flapping, y + 60*sizeY}};
+    POINT SmallpatternR [4]= {{x, y}, {x + ROUND(107*sizeX) - flapping, y + ROUND(35*sizeY)},
+                                      {x + ROUND(113*sizeX) - flapping, y + ROUND(50*sizeY)},
+                                      {x + ROUND( 93*sizeX) - flapping, y + ROUND(60*sizeY)}};
     txPolygon (SmallpatternR, 4);
 
-    POINT SmallpatternL [4]= {{x, y}, {x - 107*sizeX + flapping, y + 35*sizeY},
-                                      {x - 113*sizeX + flapping, y + 50*sizeY},
-                                      {x -  93*sizeX + flapping, y + 60*sizeY}};
+    POINT SmallpatternL [4]= {{x, y}, {x - ROUND(107*sizeX) + flapping, y + ROUND(35*sizeY)},
+                                      {x - ROUND(113*sizeX) + flapping, y + ROUND(50*sizeY)},
+                                      {x - ROUND( 93*sizeX) + flapping, y + ROUND(60*sizeY)}};
     txPolygon (SmallpatternL, 4);
 
      txSetColor     (Deffycolor, 2);
      txSetFillColor (Deffycolor);
 
-     txLine   (           x, y -  32*sizeY, x +  28*sizeX, y -  52*sizeY);
-     txLine   (x + 28*sizeX, y -  52*sizeY, x +  40*sizeX, y -  88*sizeY);
-     txLine   (x + 40*sizeX, y -  88*sizeY, x +  30*sizeX - hornDistance, y - 120*sizeY - hornDistance);
-     txCircle (x + 30*sizeX - hornDistance, y - 120*sizeY - hornDistance, 5*sizeX);
+     txLine   (                  x, y -  ROUND(32*sizeY), x +  ROUND(28*sizeX), y -  ROUND(52*sizeY));
+     txLine   (x + ROUND(28*sizeX), y -  ROUND(52*sizeY), x +  ROUND(40*sizeX), y -  ROUND(88*sizeY));
+     txLine   (x + ROUND(40*sizeX), y -  ROUND(88*sizeY), x +  ROUND(30*sizeX) - hornDistance, y - ROUND(120*sizeY) - hornDistance);
+     txCircle (x + ROUND(30*sizeX) - hornDistance, y - ROUND(120*sizeY) - hornDistance, 5*sizeX);
 //===================================================================
-     txLine   (           x, y -  32*sizeY, x - 28*sizeX, y -  52*sizeY);
-     txLine   (x - 28*sizeX, y -  52*sizeY, x - 40*sizeX, y -  88*sizeY);
-     txLine   (x - 40*sizeX, y -  88*sizeY, x - 30*sizeX + hornDistance, y - 120*sizeY - hornDistance);
-     txCircle (x - 30*sizeX + hornDistance, y - 120*sizeY - hornDistance, 5*sizeX);
+     txLine   (                  x, y -  ROUND(32*sizeY), x - ROUND(28*sizeX), y -  ROUND(52*sizeY));
+     txLine   (x - ROUND(28*sizeX), y -  ROUND(52*sizeY), x - ROUND(40*sizeX), y -  ROUND(88*sizeY));
+     txLine   (x - ROUND(40*sizeX), y -  ROUND(88*sizeY), x - ROUND(30*sizeX) + hornDistance, y - ROUND(120*sizeY) - hornDistance);
+     txCircle (x - ROUND(30*sizeX) + hornDistance, y - ROUND(120*sizeY) - hornDistance, 5*sizeX);
 
 
-     POINT DeffyBody[8] = {{x, y - 40*sizeY}, {x - 5*sizeX, y - 30*sizeY}, {x - 2*sizeX, y - 20*sizeY},
-                          {x - 10*sizeX, y}, {x, y + 60*sizeY},
-                          {x + 10*sizeX, y}, {x + 3*sizeX, y - 20*sizeY}, {x + 5*sizeX, y - 30*sizeY}};
+     POINT DeffyBody[8] = {{                  x, y - ROUND(40*sizeY)},
+                           {x - ROUND( 5*sizeX), y - ROUND(30*sizeY)},
+                           {x - ROUND( 2*sizeX), y - ROUND(20*sizeY)},
+                           {x - ROUND(10*sizeX), y}, {                 x, y + ROUND(60*sizeY)},
+                           {x + ROUND(10*sizeX), y}, {x + ROUND(3*sizeX), y - ROUND(20*sizeY)},
+                           {x + ROUND( 5*sizeX), y - ROUND(30*sizeY)}};
      txPolygon (DeffyBody,8);
 
      }
@@ -1219,17 +1222,18 @@ void Cheese_draw (int x, int y, double bigness)
     {
     txSetColor     (TX_LIGHTRED, 5);
     txSetFillColor (RGB (181, 0, 0));
-    POINT cheese[3] = {{x, y}, {x - 140*bigness, y + 30*bigness}, {x + 150*bigness, y + 30*bigness}};
+    POINT cheese[3] = {{x, y}, {x - ROUND(140*bigness), y + ROUND(30*bigness)}, {x + ROUND(150*bigness), y + ROUND(30*bigness)}};
     txPolygon (cheese, 3);
 
     txSetColor     (RGB (181, 170,  43),2);
     txSetFillColor (RGB (227, 221, 140));
-    txRectangle (x - 140*bigness, y + 30*bigness, x + 150*bigness, y + 80*bigness);
-    txCircle (x -  80*bigness, y + 50*bigness, 5*bigness);
-    txCircle (x -  45*bigness, y + 60*bigness, 5*bigness);
-    txCircle (x +  10*bigness, y + 40*bigness, 5*bigness);
-    txCircle (x +  60*bigness, y + 50*bigness, 5*bigness);
-    txCircle (x + 130*bigness, y + 55*bigness, 5*bigness);
+    txRectangle (x - ROUND(140*bigness), y + ROUND(30*bigness), x + ROUND(150*bigness), y + ROUND(80*bigness));
+
+    txCircle (x - ROUND( 80*bigness), y + ROUND(50*bigness), ROUND(5*bigness));
+    txCircle (x - ROUND( 45*bigness), y + ROUND(60*bigness), ROUND(5*bigness));
+    txCircle (x + ROUND( 10*bigness), y + ROUND(40*bigness), ROUND(5*bigness));
+    txCircle (x + ROUND( 60*bigness), y + ROUND(50*bigness), ROUND(5*bigness));
+    txCircle (x + ROUND(130*bigness), y + ROUND(55*bigness), ROUND(5*bigness));
     }
 
 
