@@ -47,7 +47,7 @@ int main()
 void EntryScene()
     {
     txBegin();
-    txPlaySound ("av013.wav", SND_LOOP);
+    txPlaySound ("SOUNDS//av013.wav", SND_LOOP);
 
     int t = 0;
     while (t <= 90)
@@ -84,7 +84,7 @@ void SpringCountryScene()
     {
     txBegin();
     txPlaySound (NULL);
-    txPlaySound ("av014.wav", SND_LOOP);
+    txPlaySound ("SOUNDS//av014.wav", SND_LOOP);
 
     int t = 1;
     while (t <= 120)
@@ -100,11 +100,11 @@ void SpringCountryScene()
         Millblades_draw (675, 180, ROUND (- 100*cos(t*0.1  + 1.5) + 675), ROUND (- 100*sin(t*0.1  + 1.5) + 180));
         Millblades_draw (675, 180, ROUND (  100*cos(t*0.1  + 1.5) + 675), ROUND (  100*sin(t*0.1  + 1.5) + 180));
 
-        Butterfly_draw (t + 600, ROUND (abs (sin (t*0.5)*M_PI)*40 +  50), RGB (204, 139,  51), 2);
-        Butterfly_draw (t + 300, ROUND (abs (sin (t*0.5)*M_PI)*40 +  70), RGB (204, 155, 202), 2);
-        Butterfly_draw (t + 500, ROUND (abs (sin (t*0.2)*M_PI)*70 + 100), RGB (255, 255, 113), 3);
+        Butterfly_draw (120 + ROUND (15*(t - sin(t))),   50 + ROUND (50*(1 - cos(t))), RGB (204, 139,  51), 2);
+        Butterfly_draw (460 + ROUND (15*(t - sin(t))),  150 + ROUND (50*(1 - cos(t))), RGB (204, 155, 202), 2);
+        Butterfly_draw (320 + ROUND (15*(t - sin(t))),  150 + ROUND (50*(1 - cos(t))), RGB (255, 255, 113), 3);
 
-        CatBody_draw   (300 + 2*t, 400 + 0.1*t, 0.7, 0.6, 20.0, RGB (255, 157, 60), RGB (255, 245, 255));
+        CatBody_draw   (300 + 2*t, 400 + ROUND (0.1*t), 0.7, 0.6, 20.0, RGB (255, 157, 60), RGB (255, 245, 255));
 
         Grass_draw     (800, 480, TX_GREEN, 1.1, 1.1);
         Grass_draw     (700, 580, TX_GREEN, 0.9, 0.9);
@@ -125,9 +125,9 @@ void SpringCountryScene()
         Mouse_twerk    (720, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
         Mouse_twerk    (680, 570, 0.3, 0.3, t/8%2*5 + 10, t%2*10 + 50);
 
-        Girl_draw      (600 - 4*t, 500 - 0.5*t, 0.7, 0.7, 120,  ((t/4)%2)*50 - 50,
+        Girl_draw      (600 - 4*t, 500 - ROUND (0.5*t), 0.7, 0.7, 120,  ((t/4)%2)*50 - 50,
                        -10, 0, 0, 0, 0, t%2*3, 0, RGB (219, 112, 147));
-        Stick_draw     (580 - 4*t, 380 - 0.5*t, 0.5, 0.5, (t%2*50)/7 - 20);
+        Stick_draw     (580 - 4*t, 380 - ROUND (0.5*t), 0.5, 0.5, (t%2*50)/7 - 20);
 
         Skateboard_draw     (- 100 + 11*t, 700, 0.8, 0.8);
         Skate_wheels_draw   (-  50 + 11*t + ROUND (4*cos(t)) + ROUND (3*sin(t)), 730 + ROUND (3*cos(t)) - ROUND (4*sin(t)), 20);
@@ -158,9 +158,9 @@ void SpringCountrySceneEscape()
         Millblades_draw (675, 180, ROUND (- 100*cos(t*0.1  + 1.5) + 675), ROUND (- 100*sin(t*0.1  + 1.5) + 180));
         Millblades_draw (675, 180, ROUND (  100*cos(t*0.1  + 1.5) + 675), ROUND (  100*sin(t*0.1  + 1.5) + 180));
 
-        Butterfly_draw (t + 600, ROUND (abs (sin (t*0.5)*M_PI)*40 +  50), RGB (204, 139,  51), 2);
-        Butterfly_draw (t + 300, ROUND (abs (sin (t*0.5)*M_PI)*40 +  70), RGB (204, 155, 202), 2);
-        Butterfly_draw (t + 500, ROUND (abs (sin (t*0.2)*M_PI)*70 + 100), RGB (255, 255, 113), 3);
+        Butterfly_draw (220 + ROUND (15*(t - sin(t))),   50 + ROUND (50*(1 - cos(t))), RGB (204, 139,  51), 2);
+        Butterfly_draw (450 + ROUND (15*(t - sin(t))),  150 + ROUND (50*(1 - cos(t))), RGB (204, 155, 202), 2);
+        Butterfly_draw (620 + ROUND (15*(t - sin(t))),  150 + ROUND (50*(1 - cos(t))), RGB (255, 255, 113), 3);
 
         Grass_draw     (800, 480, TX_GREEN, 1.1, 1.1);
         Grass_draw     (700, 580, TX_GREEN, 0.9, 0.9);
@@ -175,12 +175,12 @@ void SpringCountrySceneEscape()
         MouseBody_draw (750 + 70*t, 500, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
         Cheese_draw    (800, 500, 1.0);
         MouseBody_draw (800 + 50*t, 570 +     t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
-        MouseBody_draw (840 + 50*t, 570 + 0.1*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
-        MouseBody_draw (880 + 50*t, 570 + 0.2*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
-        MouseBody_draw (920 + 50*t, 570 + 0.3*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
-        MouseBody_draw (960 + 50*t, 570 + 0.3*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
-        MouseBody_draw (760 + 50*t, 570 + 0.5*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
-        MouseBody_draw (680 + 50*t, 570 + 0.6*t, 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (840 + 50*t, 570 + ROUND (0.1*t), 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (880 + 50*t, 570 + ROUND (0.2*t), 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (920 + 50*t, 570 + ROUND (0.3*t), 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (960 + 50*t, 570 + ROUND (0.3*t), 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (760 + 50*t, 570 + ROUND (0.5*t), 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
+        MouseBody_draw (680 + 50*t, 570 + ROUND (0.6*t), 0.3, 0.3, RGB (116, 143, 141), RGB (255, 128, 128));
 
         Girl_draw      (100, 450, 0.7, 0.7, 120,  ((t/4)%2)*50 - 50,
                         -10, 0, 0, 0, 0, t%2*3, 0, RGB (219, 112, 147));
@@ -197,7 +197,7 @@ void PinkMountainScene()
     {
     txBegin();
     txPlaySound (NULL);
-    txPlaySound ("BY_RIVER.wav", SND_LOOP);
+    txPlaySound ("SOUNDS//BY_RIVER.wav", SND_LOOP);
 
     int t = 0;
     int inclination = 30;
@@ -229,7 +229,7 @@ void PinkMountainScene()
 void NightSavanahScene()
     {
     txPlaySound (NULL);
-    txPlaySound ("MARTINET.wav", SND_LOOP);
+    txPlaySound ("SOUNDS//MARTINET.wav", SND_LOOP);
     txBegin();
 
     int t = 0;
@@ -280,7 +280,7 @@ void NightSavanahSceneEnd()
 void NightSavanahSceneEndFalling()
      {
     txPlaySound (NULL);
-    txPlaySound ("BIRDHIT.wav", SND_LOOP);
+    txPlaySound ("SOUNDS//BIRDHIT.wav", SND_LOOP);
     txBegin();
 
     int t = 0;
@@ -306,7 +306,7 @@ void NightSavanahSceneEndFalling()
 void NightSavanahSceneEndFallingResume()
     {
     txPlaySound (NULL);
-    txPlaySound ("AFRICAN.wav", SND_LOOP);
+    txPlaySound ("SOUNDS//AFRICAN.wav", SND_LOOP);
     txBegin();
 
     int t = 0;
@@ -332,7 +332,7 @@ void NightSavanahSceneEndFallingResume()
 void FinishScene()
     {
     txPlaySound (NULL);
-    txPlaySound ("FB002.wav", SND_LOOP);
+    txPlaySound ("SOUNDS//FB002.wav", SND_LOOP);
     txBegin();
 
     int t = 0;
