@@ -1,6 +1,7 @@
 #include "TXLib.h"
 #include "LibIra.h"
 #include "DetkovaLALib.h"
+#include <cmath>
 
 
 void SunnyDayFon();
@@ -174,12 +175,12 @@ void WalkingScene()
         Cloud_draw (400 + 2*t, 120, 0.5, 0.5, TX_WHITE);
 
 
-        DrawGirl   (525 + t, 330 + t, 1,   1  , RGB(221, 160, 221), RGB(218, 105, 30),
+        DrawGirl   (525 + t, 330 + t, 1, 1, RGB(221, 160, 221), RGB(218, 105, 30),
                     RGB(255, 0, 255), 0, 0, t%10, 0, 5, 1, 0, 0, 0, 0, 0);
 
         DrawGrib   (555, 560, 1.2, 1.2, RGB (153 - t, 100, 253 - t), TX_WHITE);
 
-        DrawBoy    (675 + t, 330 + t, 1,   1  , RGB(221, 160, 221), RGB(218, 105, 30),
+        DrawBoy    (675 + t, 330 + t, 1, 1, RGB(221, 160, 221), RGB(218, 105, 30),
                     RGB(0, 0, 255), 0, 0, t%10, 0, 0, 1, 0, 0, 0, 0, 0);
 
         DrawGrib   (720 + t, 360 + t, 1.2, 1.2, TX_ORANGE ,  TX_YELLOW);
@@ -235,12 +236,12 @@ void MagicScene()
         Cloud_draw (400 + 2*t, 120, 0.5, 0.5, TX_WHITE);
 
 
-        DrawGirl   (625, 430,   1,   1, RGB(221, 160, 221), RGB(218, 105, 30),
+        DrawGirl   (625, 430, 1, 1, RGB(221, 160, 221), RGB(218, 105, 30),
                     RGB(255, 0, 255), 0, 0, t%10, 0, 5, 1, 0, 0, 0, 0, 0);
 
         DrawGrib   (555, 460, 1.2, 1.2, RGB (153 - t, 100, 253 - t), TX_WHITE);
 
-        DrawBoy    (775, 430,   1,   1, RGB(221, 160, 221), RGB(218, 105, 30),
+        DrawBoy    (775, 430, 1, 1, RGB(221, 160, 221), RGB(218, 105, 30),
                     RGB(0, 0, 255), 0, 0, t%10, 0, 0, 1, 0, 0, 0, 0, 0);
 
         DrawGrib   (820, 460, 1.2, 1.2, TX_ORANGE ,  TX_WHITE);
@@ -263,11 +264,17 @@ void NirvanaScene()
         {
         txBitBlt   (txDC(), 0, 0, 1000, 900, background_Cartoon, 0, 0);
 
-        DrawGirl   (200 + ROUND ( 100*cos(t*0.1)), 200 + ROUND (100*sin(t*0.1)),   1, 1, RGB(221, 160, 221),
+        DrawGirl   (200 + ROUND(100*cos(t*0.1)), 200 + ROUND(100*sin(t*0.1)), 1, 1, RGB(221, 160, 221),
                     RGB(218, 105, 30), RGB(255, 0, 255), -20 + t%3*10, -20 + t%3*10, 0, 0, 5, 1, 0, 0, 0, 0, 0);
 
-        DrawBoy    (700 + ROUND ( 100*cos(t*0.1)), 200 + ROUND (  100*sin(t*0.1) + 180),   1,   1, RGB(221, 160, 221),
+        DrawBoy    (700 + ROUND( 100*cos(t*0.1)), 200 + ROUND(100*sin(t*0.1) + 180), 1, 1, RGB(221, 160, 221),
                     RGB (218, 105, 30), RGB(0, 0, 255), 0, 0, -20 + t%3*10, 0, 0, 1, 0, 0, 0, 0, 0);
+
+        DrawGrib   (300 + ROUND(200*cos(t*0.1)), 300 + ROUND(100*sin(t*0.1)), 0.7, 0.7, RGB (rand()%255, rand()%255, rand()%255), RGB (210, 209, 151));
+        DrawGrib   (500 + ROUND(200*cos(t*0.1)), 500 + ROUND(100*sin(t*0.1)), 1.7, 1.7, RGB (rand()%255, rand()%255, rand()%255), RGB (210, 209, 151));
+
+        DrawGrib   (800 + ROUND(200*cos(t*0.1)), 700 + ROUND(100*sin(t*0.1)), 0.7, 0.7, RGB (rand()%255, rand()%255, rand()%255), RGB (210, 209, 151));
+        DrawGrib   (700 + ROUND(200*cos(t*0.1)), 100 + ROUND(100*sin(t*0.1)), 1.7, 1.7, RGB (rand()%255, rand()%255, rand()%255), RGB (210, 209, 151));
 
         txSleep (50);
         t++;
@@ -291,7 +298,7 @@ void Cluster_draw (int x, int y, double sizeX, double sizeY, COLORREF outline, C
 void Rain_draw (int x, int y)
     {
     txSetColor (TX_GREY,2);
-    txLine (x,y, x+20, y+30);
+    txLine (x, y, x + 20, y + 30);
     }
 
 
