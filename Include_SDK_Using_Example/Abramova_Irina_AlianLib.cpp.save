@@ -1,9 +1,8 @@
 //========================================================================================//
-//  Using alien library
+//  Using alian library
+
 //
-//  Author Abramova Irina
 //
-//  May 2021, gymnasium 36, Krasnodar
 //========================================================================================//
 #include "TXLib.h"
 #include "LibIra.h"
