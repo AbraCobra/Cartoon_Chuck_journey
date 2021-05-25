@@ -5,7 +5,7 @@
 //==============================================================================================//
 
 #include "TXLib.h"
-#include "LibIra.h"
+#include "..\LibIraSDK\LibIra.h"
 #include "DetkovaLALib.h"
 #include <cmath>
 
