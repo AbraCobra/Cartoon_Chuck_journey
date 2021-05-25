@@ -1,10 +1,9 @@
-//========================================================================================//
-//  Using alien library
+//==============================================================================================//
+//   A MAGIG MUSHROOM  (Example of  using alien SDK)
 //
-//  Author Abramova Irina
-//
-//  May 2021, gymnasium 36, Krasnodar
-//========================================================================================//
+//   Author Abramova Irina, Krasnodar, 2021
+//==============================================================================================//
+
 #include "TXLib.h"
 #include "LibIra.h"
 #include "DetkovaLALib.h"
@@ -24,33 +23,15 @@ void Rain_draw    (int x, int y);
 
 const int Max_fireworks = 515;
 const int Max_rainDrops = 900;
-const int Wscreen=1000;
-const int Hscreen=900;
+const int Wscreen = 1000;
+const int Hscreen = 900;
 
 
-int x0Circle[Max_fireworks];
-int y0Circle[Max_fireworks];
-COLORREF color[Max_fireworks];
+int X0Circle[Max_fireworks] = {};
+int Y0Circle[Max_fireworks] = {};
+COLORREF Color[Max_fireworks] = {};
 
-int randInt (int a, int b)
-    {
-    return a + rand()%(b-a+1);
-    }
 
-COLORREF randColor()
-    {
-    return RGB(randInt (0, 255), randInt (0, 255), randInt (0, 255));
-    }
-
-void Input_array()
-    {
-    for (int i=0; i<Max_fireworks; i++)
-        {
-        x0Circle[i] = randInt(0, Wscreen);
-        y0Circle[i] = randInt(0, Hscreen);
-        color[i] = randColor();
-        }
-    }
 int main()
     {
      txCreateWindow (Wscreen, Hscreen);
@@ -65,6 +46,27 @@ int main()
      return 0;
      }
 
+int randInt (int a, int b)
+    {
+    return a + rand() % (b - a + 1);
+    }
+
+COLORREF randColor()
+    {
+    return RGB(randInt (0, 255), randInt (0, 255), randInt (0, 255));
+    }
+
+void Input_array()
+    {
+
+    for (int i = 0; i < Max_fireworks; i++)
+        {
+        X0Circle[i] = randInt(0, Wscreen);
+        Y0Circle[i] = randInt(0, Hscreen);
+        Color[i] = randColor();
+        }
+    }
+
 void SunnyDayFon()
     {
     SpringFonBegining();
@@ -76,7 +78,7 @@ void RainScene()
 
     int t = 0;
     int swing = 40;
-    while (t <=55)
+    while (t <= 55)
         {
         txClear();
         SunnyDayFon();
@@ -89,16 +91,16 @@ void RainScene()
         DrawTree (800,  250, 1.1, 1.1, RGB (51, 255 - 14*t, 52), abs(t%swing - swing/2) - swing/4);
         DrawTree (950,  250, 1.1, 1.1, RGB (51, 255 - 16*t, 52), abs(t%swing - swing/2) - swing/4);
 
-        for (int i=0; i< Max_rainDrops; i++)
+        for (int i = 0; i < Max_rainDrops; i++)
             {
-            Rain_draw  (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13);
-            Rain_draw  (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13);
-            Rain_draw  (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13);
-            Rain_draw  (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13);
-            Rain_draw  (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13);
-            Rain_draw  (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13);
-            Rain_draw  (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13);
-            Grass_draw (x0Circle[i], 450 + 5*i, RGB (74, 152, 41), 0.5, 0.5);
+            Rain_draw  (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13);
+            Rain_draw  (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13);
+            Rain_draw  (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13);
+            Rain_draw  (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13);
+            Rain_draw  (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13);
+            Rain_draw  (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13);
+            Rain_draw  (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13);
+            Grass_draw (X0Circle[i], 450 + 5*i, RGB (74, 152, 41), 0.5, 0.5);
             }
 
         Cloud_draw (  0 + 10*t, - 50, 1.2, 1.2, RGB(153 - 12*t, 153 - 12*t, 153 - 12*t));
@@ -117,12 +119,12 @@ void EndRainScene()
 
     int t = 0;
     int swing = 40;
-    while (t <=50)
+    while (t <= 50)
         {
         txClear();
         SunnyDayFon();
 
-        DrawTree (50,   250, 1.1, 1.1, RGB ( 0,  51 +  3*t, 58), abs(t%swing - swing/2) - swing/4);
+        DrawTree ( 50,  250, 1.1, 1.1, RGB ( 0,  51 +  3*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (200,  250, 1.1, 1.1, RGB ( 0,  51 +  4*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (350,  250, 1.1, 1.1, RGB ( 0,  51 +  5*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (500,  250, 1.1, 1.1, RGB (51, 255 -  8*t, 52), abs(t%swing - swing/2) - swing/4);
@@ -134,9 +136,9 @@ void EndRainScene()
 
         for (int i=0; i< Max_rainDrops; i++)
             {
-            Grass_draw (x0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 + 0.001*t, 0.5 + 0.001*t);
-            Grass_draw (x0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 + 0.001*t, 0.5 + 0.001*t);
-            DrawGrib   (x0Circle[i], 450 + 5*i, 0.1 + 0.01*t, 0.1 + 0.01*t , RGB (177, 100, 100), TX_WHITE);
+            Grass_draw (X0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 + 0.001*t, 0.5 + 0.001*t);
+            Grass_draw (X0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 + 0.001*t, 0.5 + 0.001*t);
+            DrawGrib   (X0Circle[i], 450 + 5*i, 0.1 + 0.01*t, 0.1 + 0.01*t , RGB (177, 100, 100), TX_WHITE);
             }
 
         DrawGrib   (555, 560, 0.1 + 0.01*2*t, 0.1 + 0.01*2*t, TX_LIGHTRED, TX_WHITE);
@@ -156,12 +158,12 @@ void WalkingScene()
 
     int t = 0;
     int swing = 40;
-    while (t <=100)
+    while (t <= 100)
         {
         txClear();
         SunnyDayFon();
 
-        DrawTree (50,   250, 1.1, 1.1, RGB ( 0,  51 +  3*t, 58), abs(t%swing - swing/2) - swing/4);
+        DrawTree ( 50,  250, 1.1, 1.1, RGB ( 0,  51 +  3*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (200,  250, 1.1, 1.1, RGB ( 0,  51 +  4*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (350,  250, 1.1, 1.1, RGB ( 0,  51 +  5*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (500,  250, 1.1, 1.1, RGB (51, 255 -  8*t, 52), abs(t%swing - swing/2) - swing/4);
@@ -173,9 +175,9 @@ void WalkingScene()
 
         for (int i=0; i< Max_rainDrops; i++)
             {
-            Grass_draw (x0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 , 0.5 );
-            Grass_draw (x0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 , 0.5 );
-            DrawGrib   (x0Circle[i], 450 + 5*i, 0.5, 0.5, RGB (177, 100, 100), TX_WHITE);
+            Grass_draw (X0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 , 0.5 );
+            Grass_draw (X0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 , 0.5 );
+            DrawGrib   (X0Circle[i], 450 + 5*i, 0.5, 0.5, RGB (177, 100, 100), TX_WHITE);
             }
 
         Cloud_draw (600 + 2*t,  60, 0.6, 0.6, TX_WHITE);
@@ -206,12 +208,12 @@ void MagicScene()
 
     int t = 0;
     int swing = 40;
-    while (t <=50)
+    while (t <= 50)
         {
         txClear();
         SunnyDayFon();
 
-        DrawTree (50,   250, 1.1, 1.1, RGB ( 0,  51 +  3*t, 58), abs(t%swing - swing/2) - swing/4);
+        DrawTree ( 50,  250, 1.1, 1.1, RGB ( 0,  51 +  3*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (200,  250, 1.1, 1.1, RGB ( 0,  51 +  4*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (350,  250, 1.1, 1.1, RGB ( 0,  51 +  5*t, 58), abs(t%swing - swing/2) - swing/4);
         DrawTree (500,  250, 1.1, 1.1, RGB (51, 255 -  8*t, 52), abs(t%swing - swing/2) - swing/4);
@@ -221,22 +223,22 @@ void MagicScene()
 
         DrawSun  (100 + 10*t/100,  100,  0.8, 0.8, TX_YELLOW, 1, 1, 1, 1, 1);
 
-        for (int i=0; i< Max_rainDrops; i++)
+        for (int i = 0; i < Max_rainDrops; i++)
             {
-            Grass_draw   (x0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 , 0.5 );
-            Grass_draw   (x0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 , 0.5 );
-            DrawGrib     (x0Circle[i], 450 + 5*i, 0.5, 0.5, RGB (177, 100, 100), TX_WHITE);
+            Grass_draw   (X0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 , 0.5 );
+            Grass_draw   (X0Circle[i], 450 + 5*i, RGB (95, 236, 0), 0.5 , 0.5 );
+            DrawGrib     (X0Circle[i], 450 + 5*i, 0.5, 0.5, RGB (177, 100, 100), TX_WHITE);
             }
 
-        for (int i=0; i< Max_fireworks; i++)
+        for (int i = 0; i < Max_fireworks; i++)
             {
-            Cluster_draw (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13, 0.1, 0.1, color[i], color[i]);
-            Cluster_draw (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13, 0.1, 0.1, color[i], color[i]);
-            Cluster_draw (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13, 0.1, 0.1, color[i], color[i]);
-            Cluster_draw (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13, 0.1, 0.1, color[i], color[i]);
-            Cluster_draw (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13, 0.1, 0.1, color[i], color[i]);
-            Cluster_draw (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13, 0.1, 0.1, color[i], color[i]);
-            Cluster_draw (x0Circle[i]*t/12, 20 + y0Circle[i]*t/13, 0.1, 0.1, color[i], color[i]);
+            Cluster_draw (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13, 0.1, 0.1, Color[i], Color[i]);
+            Cluster_draw (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13, 0.1, 0.1, Color[i], Color[i]);
+            Cluster_draw (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13, 0.1, 0.1, Color[i], Color[i]);
+            Cluster_draw (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13, 0.1, 0.1, Color[i], Color[i]);
+            Cluster_draw (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13, 0.1, 0.1, Color[i], Color[i]);
+            Cluster_draw (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13, 0.1, 0.1, Color[i], Color[i]);
+            Cluster_draw (X0Circle[i]*t/12, 20 + Y0Circle[i]*t/13, 0.1, 0.1, Color[i], Color[i]);
             }
 
         Cloud_draw (600 + 2*t,  60, 0.6, 0.6, TX_WHITE);
